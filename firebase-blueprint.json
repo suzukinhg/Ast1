@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Public and private information about a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "displayName": { "type": "string" },
+        "email": { "type": "string" },
+        "phoneNumber": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "email", "createdAt"]
+    },
+    "AssessmentResult": {
+      "title": "Assessment Progress",
+      "description": "Tracking the hormone assessment progress of a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "score": { "type": "number" },
+        "answers": { 
+          "type": "array",
+          "items": { "type": "boolean" }
+        },
+        "completedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "score", "answers", "completedAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "Stores user profile data."
+    },
+    "/assessmentResults/{resultId}": {
+      "schema": "AssessmentResult",
+      "description": "Stores individual assessment records tagged with userId."
+    }
+  }
+}

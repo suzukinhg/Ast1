@@ -1,0 +1,66 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // 0. Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // 3. Path Variable Hardening & Global Helpers
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // 2. Validation Blueprints
+    function isValidUser(data) {
+      return data.keys().hasAll(['userId', 'createdAt'])
+        && data.userId == request.auth.uid
+        && (data.email == null || data.email is string)
+        && (data.phoneNumber == null || data.phoneNumber is string)
+        && data.createdAt == request.time;
+    }
+
+    function isValidAssessmentResult(data) {
+      return data.keys().hasAll(['userId', 'score', 'answers', 'completedAt'])
+        && data.userId == request.auth.uid
+        && data.score is number
+        && data.answers is list
+        && data.answers.size() <= 20
+        && data.completedAt == request.time;
+    }
+
+    // 1. & 6. User Profiles (PII Isolation)
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidUser(incoming());
+      allow update: if isOwner(userId) && isValidUser(incoming())
+        && incoming().userId == existing().userId
+        && incoming().createdAt == existing().createdAt;
+    }
+
+    // 8. Assessment Results (Secure List Queries)
+    match /assessmentResults/{resultId} {
+      allow get: if isOwner(existing().userId);
+      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn() && isValidAssessmentResult(incoming());
+      allow delete: if isOwner(existing().userId);
+    }
+  }
+}

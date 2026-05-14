@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-primary: #C5A47E; /* 奢华暗金 */
+  --color-brand-paper: #FDFCFB;   /* 艺术纸白 */
+  --color-brand-ink: #1A1A1A;     /* 极深墨色 */
+  --color-brand-accent: #E5D5C5;  /* 柔和香槟 */
+}
+
+@layer base {
+  body {
+    @apply bg-brand-paper text-brand-ink font-sans antialiased selection:bg-brand-primary/20;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-tight leading-tight;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-white/40 backdrop-blur-3xl border border-white/20 shadow-[0_32px_128px_-16px_rgba(0,0,0,0.05)] transition-all duration-1000;
+  }
+  
+  .premium-gradient {
+    background: radial-gradient(circle at top right, rgba(197, 164, 126, 0.1), transparent 70%);
+  }
+
+  .text-reveal {
+    mask-image: linear-gradient(to right, black, black 50%, transparent 50%, transparent);
+    mask-size: 200% 100%;
+    animation: reveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes reveal {
+    from { mask-position: 100% 0; }
+    to { mask-position: 0% 0; }
+  }
+}
+
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform, opacity;
+}
+
+/* Custom Phone Input Styles */
+.PhoneInput {
+  @apply flex items-center gap-3;
+}
+
+.PhoneInputInput {
+  @apply bg-transparent outline-none w-full text-sm font-medium;
+}
+
+.PhoneInputCountry {
+  @apply flex items-center gap-1;
+}
+
+.PhoneInputCountrySelect {
+  @apply opacity-0 absolute w-full h-full cursor-pointer;
+}
+
+/* Hide recaptcha badge unless focused */
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.markdown-body ul {
+  @apply list-disc list-inside space-y-1 mb-4;
+}
+
+.markdown-body ol {
+  @apply list-decimal list-inside space-y-1 mb-4;
+}
+
+.markdown-body p {
+  @apply mb-3 last:mb-0;
+}
+
+.markdown-body h1, .markdown-body h2, .markdown-body h3 {
+  @apply font-bold mt-4 mb-2;
+}
+
+.markdown-body strong {
+  @apply font-bold text-brand-primary;
+}
