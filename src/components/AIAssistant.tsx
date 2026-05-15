@@ -201,7 +201,7 @@ export default function AIAssistant() {
                 </button>
               </div>
               <p className="text-[10px] text-center text-brand-ink/30 mt-3 uppercase tracking-widest">
-                Professional Advice Driven by Gemini AI
+                Professional Health Consultation • Specialized AI
               </p>
             </div>
           </motion.div>

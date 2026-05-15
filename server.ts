@@ -56,8 +56,8 @@ async function startServer() {
       // Add current prompt
       messages.push({ role: "user", content: prompt });
 
-      // 使用 fetch 直接调用您的指定地址
-      const response = await fetch('http://47.79.18.71:3000/api/deepseek', {
+      // 调用指定的 API 地址
+      const response = await fetch('https://astcare.vip/api/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -74,9 +74,9 @@ async function startServer() {
 
       if (!response.ok) {
         const errorText = await response.text();
-        console.error(`[Custom Server Error] Status: ${response.status}, Body: ${errorText}`);
+        console.error(`[API Error] Status: ${response.status}, Body: ${errorText}`);
         return res.status(response.status).json({ 
-          error: `服务器响应异常 (${response.status})`,
+          error: `API 响应异常 (${response.status})`,
           detail: errorText
         });
       }
@@ -88,8 +88,8 @@ async function startServer() {
       res.json({ text: aiText });
 
     } catch (error: any) {
-      console.error("Custom Server Connection Error:", error?.message || error);
-      res.status(500).json({ error: "无法连接到您的自建服务器，请检查服务器防火墙和端口是否允许入站访问。" });
+      console.error("API Connection Error:", error?.message || error);
+      res.status(500).json({ error: "无法连接到 AI 服务接口，请检查网络连接或 API 状态。" });
     }
   });
 
