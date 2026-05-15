@@ -28,13 +28,7 @@ async function startServer() {
     console.log(`[DeepSeek Chat] Using key: ${keyFingerprint}`);
 
     try {
-      // Lazy initialize DeepSeek client (OpenAI compatible)
-      const openai = new OpenAI({
-        apiKey: apiKey,
-        baseURL: 'https://api.deepseek.com',
-      });
-
-      // Prepare messages for DeepSeek (OpenAI format)
+      // Prepare messages (OpenAI format)
       const messages: any[] = [
         {
           role: "system",
@@ -61,24 +55,41 @@ async function startServer() {
 
       // Add current prompt
       messages.push({ role: "user", content: prompt });
-      
-      const completion = await openai.chat.completions.create({
-        model: "deepseek-chat",
-        messages: messages,
-        temperature: 0.2,
-        max_tokens: 128,
-        stream: false,
+
+      // 使用 fetch 直接调用您的指定地址
+      const response = await fetch('http://47.79.18.71:3000/api/deepseek', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${apiKey}`
+        },
+        body: JSON.stringify({
+          model: "deepseek-chat",
+          messages: messages,
+          temperature: 0.2,
+          max_tokens: 128,
+          stream: false
+        })
       });
 
-      res.json({ text: completion.choices[0].message.content });
-    } catch (error: any) {
-      console.error("DeepSeek API Error:", error?.response?.data || error?.message || error);
-      
-      if (error?.status === 401) {
-        return res.status(401).json({ error: "无效的 DeepSeek API 密钥。建议检查后台设置。" });
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`[Custom Server Error] Status: ${response.status}, Body: ${errorText}`);
+        return res.status(response.status).json({ 
+          error: `服务器响应异常 (${response.status})`,
+          detail: errorText
+        });
       }
 
-      res.status(500).json({ error: "DeepSeek AI 响应失败，请稍后再试。" });
+      const data: any = await response.json();
+      
+      // 兼容 OpenAI 格式的返回
+      const aiText = data.choices?.[0]?.message?.content || data.content || "未获取到有效响应";
+      res.json({ text: aiText });
+
+    } catch (error: any) {
+      console.error("Custom Server Connection Error:", error?.message || error);
+      res.status(500).json({ error: "无法连接到您的自建服务器，请检查服务器防火墙和端口是否允许入站访问。" });
     }
   });
 

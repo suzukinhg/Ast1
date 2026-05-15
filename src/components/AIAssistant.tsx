@@ -39,10 +39,8 @@ export default function AIAssistant() {
     setIsLoading(true);
 
     try {
-      const hasApiKey = process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'undefined';
-      
-      if (!navigator.onLine || !hasApiKey) {
-        throw new Error('OFFLINE_OR_NO_KEY');
+      if (!navigator.onLine) {
+        throw new Error('网络连接中断，请检查您的网络设置。');
       }
 
       const history = messages.map(msg => ({
@@ -53,12 +51,24 @@ export default function AIAssistant() {
       const response = await getHealthAdvice(userQuery, history);
       if (!response) throw new Error('EMPTY_RESPONSE');
       setMessages(prev => [...prev, { role: 'model', content: response }]);
-    } catch (error) {
-      // 优雅降级：当 AI 无法响应或超时时，提供一致的专业引导
+    } catch (error: any) {
+      // 尝试解析服务器返回的 JSON 错误
+      let displayError = '抱歉，当前咨询服务暂时不可用。请检查您的服务器连接或稍后再试。';
+      try {
+        if (error.message.includes('{')) {
+          const parsed = JSON.parse(error.message);
+          displayError = parsed.error || displayError;
+        } else {
+          displayError = error.message;
+        }
+      } catch (e) {
+        // 解析失败则使用 message 原文
+      }
+
       setTimeout(() => {
         setMessages(prev => [...prev, { 
           role: 'model', 
-          content: '抱歉，当前咨询的人数较多，为了确保给您提供精准的参数建议，建议您稍后再试，或通过官网顶部联系【私人健康顾问】。' 
+          content: `${displayError}\n\n如需紧急咨询，请通过官网顶部联系【私人健康顾问】。` 
         }]);
         setIsLoading(false);
       }, 800);
