@@ -8,9 +8,26 @@ dotenv.config();
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   app.use(express.json());
+
+  // Log server mode
+  console.log(`[Server] Starting in ${process.env.NODE_ENV === "production" ? "PRODUCTION" : "DEVELOPMENT"} mode`);
+
+  // Health check endpoints
+  const healthHandler = (req: express.Request, res: express.Response) => {
+    res.json({ 
+      status: "ok", 
+      message: "Server is running",
+      mode: process.env.NODE_ENV || "development",
+      hasDeepseekKey: !!process.env.DEEPSEEK_API_KEY,
+      timestamp: new Date().toISOString()
+    });
+  };
+
+  app.get("/health", healthHandler);
+  app.get("/api/health", healthHandler);
 
   // API Route for AI Chat
   app.post("/api/chat", async (req, res) => {
@@ -19,13 +36,13 @@ async function startServer() {
     const apiKey = process.env.DEEPSEEK_API_KEY;
     
     if (!apiKey || apiKey === "undefined") {
-      console.error("Server Error: DEEPSEEK_API_KEY is missing or undefined");
-      return res.status(500).json({ error: "服务器未配置 DeepSeek API 密钥，请在后台 Secrets 中填写。" });
+      console.error("[Chat] Error: DEEPSEEK_API_KEY is missing");
+      return res.status(500).json({ error: "服务器环境未配置 DeepSeek API 密钥，请在后台 Secrets 中填写。" });
     }
 
-    // 安全地记录当前使用的 Key 指纹
+    // 安全地记录
     const keyFingerprint = `${apiKey.substring(0, 6)}...${apiKey.substring(apiKey.length - 4)}`;
-    console.log(`[DeepSeek Chat] Using key: ${keyFingerprint}`);
+    console.log(`[Chat] Request processing. Using key: ${keyFingerprint}`);
 
     try {
       // Prepare messages (OpenAI format)
@@ -109,7 +126,10 @@ async function startServer() {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://0.0.0.0:${PORT}`);
+    console.log(`[Server] Accessible at http://0.0.0.0:${PORT}`);
+    if (process.env.NODE_ENV === "production") {
+      console.log(`[Server] Serving static files from: ${path.join(process.cwd(), "dist")}`);
+    }
   });
 }
 

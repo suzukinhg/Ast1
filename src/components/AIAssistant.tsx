@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X, Send, Loader2, Sparkles } from 'lucide-react';
-import { getHealthAdvice } from '../services/geminiService';
+import { getHealthAdvice } from '../services/aiService';
 import Markdown from 'react-markdown';
 
 interface Message {

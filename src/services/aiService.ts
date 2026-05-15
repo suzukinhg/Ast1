@@ -1,6 +1,8 @@
 export async function getHealthAdvice(prompt: string, history: { role: 'user' | 'model', parts: { text: string }[] }[] = []) {
   try {
-    const response = await fetch('/api/chat', {
+    const apiPath = '/api/chat';
+    console.log(`[AI Service] Sending request to: ${apiPath}`);
+    const response = await fetch(apiPath, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
