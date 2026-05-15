@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "philosophy": "品牌哲学",
+    "scientific": "科学系统",
+    "qa": "Q&A",
+    "logout": "退出",
+    "login": "尊享会员登录",
+    "philosophy_sub": "Philosophy",
+    "scientific_sub": "Scientific",
+    "qa_sub": "Consulting"
+  },
+  "hero": {
+    "slogan_1": "荷尔蒙的",
+    "slogan_2": "无声艺术",
+    "description": "这不只是生理的平衡，而是一场关于 <1>{{highlight}}</1> 的重构。",
+    "highlight": "魅力磁场与生命韵律",
+    "cta_products": "立即优享",
+    "cta_explore": "探索科学系统",
+    "scroll_explore": "Scroll to Explore Ritual",
+    "subtitle": "优雅仪式 · 2024",
+    "bg_alt": "健康背景"
+  },
+  "scientific": {
+    "marker": "科学方案 0.88",
+    "dossier": "研发档案",
+    "title_1": "内外",
+    "title_2": "共振的",
+    "title_3": "生命节律",
+    "desc": "极致配方是对生命的最高敬畏。我们整合全球尖端生物资源，在每一毫升液体中编织出精准的生命律动蓝图。",
+    "spotlight": "成分亮点",
+    "qa_active": "质量保证启动",
+    "synergy": "互补协同",
+    "synergy_desc": "不仅仅是单一补充，而是全方位协同。这些微量却关键的成分，补全了机体平衡的最后一块拼图。",
+    "philosophy_quote": "“我们精研的不仅是营养方案，更是对机体的一种‘深度沟通’。”",
+    "philosophy_desc": "在萃丽妍，研发不只是实验数据的叠加。它是对生命复杂性的敬畏，是将每一个分子置于正确的律动点。",
+    "research": "全球协同",
+    "advanced": "生化实验室",
+    "traceable": "源头追溯",
+    "molecular_profile": "分子概况",
+    "fig": "图表.",
+    "purity": "纯度",
+    "bioavailability": "生物利用度",
+    "max": "最高",
+    "cat_hydration": "水润",
+    "cat_vitality": "活力",
+    "cat_defense": "防御",
+    "cat_balance": "平衡",
+    "ingredients": [
+      {
+        "name": "鱼胶原蛋白肽 & 三肽",
+        "desc": "双重分子量梯度渗透，深层修护结缔组织。我们采用专利酶解技术，从深海三文鱼中精萃优质蛋白，将大分子精确切割至吸收极限，重塑紧致肌理。"
+      },
+      {
+        "name": "白松露 & 白番茄",
+        "desc": "极地美白因子与森林钻石的邂逅。富含稀有氨基酸与类胡萝卜素，由内而外阻断自由基与黑色素，焕发无瑕通透质感。"
+      },
+      {
+        "name": "PQQ & 酵母葡聚糖",
+        "desc": "细胞级修护枢纽。PQQ赋能线粒体再生，结合葡聚糖免疫激活系统，在机体内部构建坚固的抗衰老防御森林。"
+      }
+    ],
+    "others": {
+      "hyaluronic": "透明质酸钠",
+      "neuraminic": "N-乙酰神经氨酸",
+      "blood_orange": "血橙 & 葡萄籽",
+      "peony": "牡丹肽 & 玫瑰"
+    },
+    "stats": [
+      { "label": "Active Ingredients", "sub": "Synergistic Profile" },
+      { "label": "Extraction Rate", "sub": "Micron-level Tech" },
+      { "label": "Clinical Tests", "sub": "Participant Data" },
+      { "label": "Global Source", "sub": "Regional Origins" }
+    ]
+  },
+  "qa": {
+    "title_1": "Questions",
+    "title_2": "& Answers",
+    "cta_title": "仍有其他疑问？",
+    "cta_desc": "我们的私人健康顾问全天候在线，为您提供一对一的精准咨询服务。",
+    "cta_btn": "立即咨询顾问",
+    "faqs": [
+      {
+        "question": "什么是“萃丽妍”系列的核心理念？",
+        "answer": "我们不仅关注单一指数的突破，更致力于通过深海三文鱼胶原蛋白肽、PQQ等核心成分，调节机体内源性平衡，从细胞层面延缓生理衰老曲线。我们的目标是为您找回那种失落已久的、充满生命力的平衡态。"
+      },
+      {
+        "question": "长期服用会有依赖性吗？",
+        "answer": "“萃丽妍”产品采用天然精萃成分，如极地白松露与专利酶解三肽。它们的设计初衷是修复与赋能机体自身系统，而非替代身体机能。我们坚持纯净配方，不含人工激素，让身体在自然的律动中重获新生。"
+      },
+      {
+        "question": "见效周期通常是多久？",
+        "answer": "根据万名真实用户的反馈，生理机能的微调通常在1-2个周期（约28-56天）显现。最初的表现往往是睡眠质量的改善与精力状态的平稳，随后是肌肤弹性和身体感知力的全方位修复。"
+      },
+      {
+        "question": "适合哪些人群服用？",
+        "answer": "适合追求卓越生活品质、处于职场高压期、希望精准管理健康曲线的成年人群。特别是对于那些渴望在繁忙都市节奏中，依然维持优雅外观与充沛体能的高端人士，它是理想的选择。"
+      },
+      {
+        "question": "产品成分是否可信？",
+        "answer": "所有成分均可溯源。我们选用的每一克原料都经过严苛的实验室筛选，从深海精萃到极地植物活性因子，均通过国际公认的纯度测试，确保在为您提供高效营养的同时，维持极致的安全底线。"
+      }
+    ]
+  },
+  "footer": {
+    "follow_us": "关注我们",
+    "add_wechat": "添加企业微信",
+    "desc": "致力于通过科学的内分泌调理方案，让每一位客户找回属于自己的黄金状态，重塑个人魅力，构建和谐家庭生活。",
+    "contact_us": "联系我们",
+    "email": "Astcare@outlook.com",
+    "address_val": "珠海市横琴（粤港澳深度合作区）港澳大道868号市民服务中心2号楼政务服务中心114室-2936",
+    "privacy": "隐私政策",
+    "terms": "服务协议",
+    "all_rights_reserved": "© 2026 Cuilea. 版权所有。"
+  },
+  "products": {
+    "coming_soon": "Coming Soon",
+    "title": "产品系列即将上线",
+    "desc": "我们正在精心打磨全新的产品系列。精美的产品图与详细的设计页面正在筹备中，敬请期待。"
+  },
+  "auth": {
+    "login_title": "账号登陆",
+    "login_subtitle": "无需验证码，输入手机号即刻开启",
+    "google_login": "使用 Google 登陆",
+    "phone_login": "手机号便捷登陆",
+    "phone_label": "请选择国家/地区并输入号码",
+    "phone_placeholder": "输入手机号",
+    "submit": "立即进入",
+    "back": "返回其他方式",
+    "secure_note": "由系统加密保护，您的隐私安全无忧",
+    "error_login_failed": "登录失败",
+    "error_enter_phone": "请输入手机号",
+    "error_invalid_phone": "请输入正确位数的手机号码",
+    "error_reg_failed": "注册失败",
+    "error_enable_email": "请先在 Firebase 控制台启用 Email/Password 登录方式",
+    "error_method_disabled": "登录方式未开启：请在 Firebase 控制台启用 Email/Password",
+    "error_system_busy": "系统繁忙: 请检查网络"
+  },
+  "gender": {
+    "thanks": "感谢登录",
+    "desc": "为了给您提供更精确的定制方案，请选择您的性别。该信息将加密存储。",
+    "male": "男士",
+    "female": "女士"
+  },
+  "app": {
+    "core_methodology": "Core Methodology / 001",
+    "balance_beauty": "平衡之美",
+    "percieve_life": "源于对生命的精准感知",
+    "not_just_product": "不仅是产品",
+    "but_evolution": "更是生命质感的进化",
+    "wellness_desc": "在大健康领域，我们深知单一的症状改善只是权宜之计。萃丽妍通过全球前沿科研成果，精准对冲生理下降曲线，为追求极限体验与长效优雅的您，提供高能营养支持。",
+    "expert_team": "科研专家团队",
+    "global_users": "全球真实用户",
+    "customer_satisfaction": "客户满意度"
+  },
+  "methodologies": {
+    "brain": {
+      "title": "大脑的情绪锚点",
+      "desc": "性激素水平直接影响大脑神经元，调节情绪波动。一个平衡的状态，是您温柔且坚韧的力量源泉。"
+    },
+    "beauty": {
+      "title": "容颜的无形装饰",
+      "desc": "胶原蛋白的流失与激素密切相关。科学调理，让您的肌肤重现通透感，由内而外散发自信磁场。"
+    },
+    "harmony": {
+      "title": "亲密关系的化学键",
+      "desc": "和谐的夫妻生活需要身体的响应。调理好激素，唤醒身体感知力，让爱意重新在流动的韵律中升温。"
+    }
+  },
+  "assessment": {
+    "title_sub": "Wellness Assessment / 生理平衡自测",
+    "title": "精准节律评估",
+    "desc": "通过科学的维度分析，探索您的生理节律状态，获取个性化的平衡与魅力方案。",
+    "step": "Step",
+    "of": "of",
+    "analysis": "Biological Rhythm Analysis",
+    "yes_label": "是的，时常如此",
+    "yes_sub": "Presence Detected",
+    "no_label": "不，目前还好",
+    "no_sub": "Balanced Rhythm",
+    "report_generated": "评估报告已生成",
+    "your_status": "您的现状",
+    "ideal_range": "理想区间",
+    "overall_index": "综合平衡指数",
+    "login_save": "登录后即可永久保存您的评测记录",
+    "get_whitepaper": "免费领取调理白皮书",
+    "get_consultation": "获取专家咨询方案",
+    "processing": "正在处理计算结果...",
+    "questions": [
+      "是否感到精力下降，午后容易疲惫？",
+      "皮肤是否出现暗沉、色斑或者难以修护的细纹？",
+      "情绪波动是否变大，容易焦虑或低落？",
+      "与伴侣的互动亲密度是否有所下降？",
+      "睡眠质量是否变差，难以进入深度睡眠？",
+      "脑力活动后是否感觉反应迟钝，思维不如以往敏捷？",
+      "身体是否存在局部浮肿，或体重受饮食波动影响极大？",
+      "是否经常感到心烦意乱，难以专注完成手头工作？",
+      "身体的感受力是否变得迟钝，对触碰和温存的反应减弱？",
+      "醒后是否感到浑身沉重，仿佛没有得到真正的休息？"
+    ],
+    "dimensions": [
+      "精力活力",
+      "代谢节奏",
+      "情绪控制",
+      "亲密和谐",
+      "睡眠质量"
+    ],
+    "feedbacks": {
+      "high": "您的生理平衡状态极佳，体内的自然节奏正处于高效且和谐的运转中。继续保持现有的生活方式，这为您持久的魅力奠定了坚实的基础。",
+      "medium_high": "您的生理状态目前总体稳定，但局部可能受外界环境或近期压力影响，出现了细微的波动信号。通过科学的节律调整与精准的营养补充，您可以轻松地让平衡感再次回归顶峰。",
+      "medium": "目前的评估显示，您的身体系统正通过微弱的信号提醒您关注内部节律。这并非意味着健康隐患，而是提示您需要关注激素水平与情绪节奏的科学协同，专业的温和干预将显著提升您的生活质感。",
+      "low": "检测到您的生理状态正面临一定的平衡挑战，这可能已经细微地反映在您的日常活力与外观表现。建议从荷尔蒙平衡的角度进行科学审视，通过分阶段的精准调序，帮助身体找回原本的和谐韵律。"
+    }
+  },
+  "user": {
+    "please_login": "请先登录",
+    "unbound": "未绑定",
+    "premium_member": "尊享会员",
+    "diamond_member": "钻石会员",
+    "basic_info": "个人基本信息",
+    "manage_profile": "管理您的身份资料",
+    "nickname": "显示昵称",
+    "contact": "绑定联系方式 (邮箱/手机号)",
+    "reg_time": "注册时间",
+    "select_avatar": "选择头像",
+    "updating_avatar": "正在更新头像..."
+  }
+}

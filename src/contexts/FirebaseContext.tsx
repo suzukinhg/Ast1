@@ -1,7 +1,10 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import { User, onAuthStateChanged, signOut } from 'firebase/auth';
+import { User, onAuthStateChanged, signOut, updateProfile } from 'firebase/auth';
 import { auth, db } from '../lib/firebase';
 import { doc, getDoc, setDoc, serverTimestamp } from 'firebase/firestore';
+import { uniqueNamesGenerator, adjectives, animals } from 'unique-names-generator';
+
+export const AVATAR_SEEDS = ["Felix", "Daisy", "Charlie", "Bella", "Apollo", "Luna", "Milo", "Chloe", "Oliver", "Lily"];
 
 enum OperationType {
   CREATE = 'create',
@@ -71,19 +74,39 @@ export function FirebaseProvider({ children }: { children: React.ReactNode }) {
         try {
           const userDoc = await getDoc(userRef);
           if (!userDoc.exists()) {
+            const randomSeed = AVATAR_SEEDS[Math.floor(Math.random() * AVATAR_SEEDS.length)];
+            const randomPhoto = `https://api.dicebear.com/7.x/avataaars/svg?seed=${randomSeed}`;
+            const randomName = uniqueNamesGenerator({ dictionaries: [adjectives, animals], separator: '', style: 'capital' }) + Math.floor(Math.random() * 100);
+
+            // Fetch any existing or new values
+            const finalDisplayName = user.displayName || randomName;
+            const finalPhotoURL = user.photoURL || randomPhoto;
+
+            if (!user.displayName || !user.photoURL) {
+              await updateProfile(user, {
+                displayName: finalDisplayName,
+                photoURL: finalPhotoURL
+              }).catch(e => console.error(e));
+            }
+
             await setDoc(userRef, {
               userId: user.uid,
-              displayName: user.displayName || null,
+              displayName: finalDisplayName,
               email: user.email || null,
               phoneNumber: user.phoneNumber || null,
-              photoURL: user.photoURL || null,
+              photoURL: finalPhotoURL,
               createdAt: serverTimestamp(),
             });
+            
+            // To ensure ui gets updated after updateProfile
+            setUser({ ...user } as User);
+          } else {
+            setUser(user);
           }
         } catch (error) {
           console.error("Error syncing user profile:", error);
+          setUser(user);
         }
-        setUser(user);
       } else {
         setUser(null);
       }

@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "philosophy": "Philosophie",
+    "scientific": "Système Scientifique",
+    "qa": "Consultation",
+    "login": "S'identifier",
+    "logout": "Déconnexion",
+    "philosophy_sub": "Philosophie",
+    "scientific_sub": "Scientifique",
+    "qa_sub": "Consulting"
+  },
+  "hero": {
+    "slogan_1": "Éclat Intérieur",
+    "slogan_2": "Symphonie Biologique",
+    "description": "Ce n'est pas seulement un équilibre physiologique, c'est une reconstruction de la <1>perception de la vie</1>.",
+    "highlight": "perception de la vie",
+    "cta_products": "Explorer la Collection",
+    "cta_explore": "Découvrir la Science",
+    "scroll_explore": "Faire défiler pour explorer",
+    "subtitle": "Rituel de Grâce · 2024",
+    "bg_alt": "Fond de Bien-être"
+  },
+  "scientific": {
+    "marker": "Protocole Scientifique 0.88",
+    "dossier": "Dossier de Recherche",
+    "title_1": "Précision Moléculaire",
+    "title_2": "Harmonie",
+    "title_3": " et Pureté",
+    "desc": "La formulation ultime est le plus grand respect pour la vie. Nous intégrons les ressources biologiques mondiales de pointe pour tisser un plan précis du rythme de la vie.",
+    "spotlight": "Ingrédient Vedette",
+    "qa_active": "Contrôle Qualité Actif",
+    "synergy": "Synergies Complémentaires",
+    "synergy_desc": "La combinaison précise de micronutriments crée une résonance biologique puissante.",
+    "philosophy_quote": "« Ce que nous affinons n'est pas seulement des solutions nutritionnelles, mais une 'communication profonde' avec le corps. »",
+    "philosophy_desc": "Chez Cuilea, la R&D est plus qu'un simple empilement de données expérimentales. C'est le respect de la complexité de la vie.",
+    "research": "RECHERCHE",
+    "advanced": "AVANCÉ",
+    "traceable": "TRAÇABLE",
+    "molecular_profile": "Profil Moléculaire",
+    "fig": "FIG.",
+    "purity": "Pureté",
+    "bioavailability": "Bio-disponibilité",
+    "max": "Max",
+    "cat_hydration": "Hydratation",
+    "cat_vitality": "Vitalité",
+    "cat_defense": "Défense",
+    "cat_balance": "Équilibre",
+    "ingredients": [
+      {
+        "name": "Peptides de Collagène de Saumon",
+        "desc": "Extraits des profondeurs, ces peptides favorisent la régénération cellulaire et l'élasticité de la peau."
+      },
+      {
+        "name": "Complexe PQQ & Truffe Blanche",
+        "desc": "Améliore la fonction mitochondriale et offre une protection antioxydante inégalée."
+      },
+      {
+        "name": "Tripeptides Enzymatiques",
+        "desc": "Absorption rapide pour une régulation hormonale efficace et un regain de vitalité."
+      }
+    ],
+    "others": {
+      "hyaluronic": "Acide Hyaluronique",
+      "neuraminic": "Acide Neuraminique",
+      "blood_orange": "Orange Sanguine",
+      "peony": "Extrait de Pivoine"
+    },
+    "stats": [
+      { "label": "Équipe de Recherche", "sub": "Experts Mondiaux" },
+      { "label": "Taux de Pureté", "sub": "Qualité Pharmaceutique" },
+      { "label": "Utilisateurs", "sub": "Dans le monde entier" },
+      { "label": "Points de Contrôle", "sub": "Sécurité Rigoureuse" }
+    ]
+  },
+  "qa": {
+    "title_1": "Questions",
+    "title_2": "& Réponses",
+    "cta_title": "D'autres questions ?",
+    "cta_desc": "Nos consultants santé privés sont en ligne 24h/24 et 7j/7 pour vous.",
+    "cta_btn": "Consulter Maintenant",
+    "faqs": [
+      {
+        "question": "Quel est le concept de la série ?",
+        "answer": "Nous visons à réguler l'équilibre endogène à l'aide de peptides de collagène de saumon et de PQQ au niveau cellulaire."
+      },
+      {
+        "question": "Y a-t-il une dépendance ?",
+        "answer": "Nos produits utilisent des ingrédients naturels pour réparer vos propres systèmes, pas pour les remplacer."
+      },
+      {
+        "question": "Combien de temps pour voir des résultats ?",
+        "answer": "Généralement 28 à 56 jours pour des changements notables dans le sommeil, l'énergie et l'éclat de la peau."
+      },
+      {
+        "question": "À qui cela convient-il ?",
+        "answer": "Aux adultes recherchant une qualité de vie élevée et gérant le stress ou la fatigue physique."
+      },
+      {
+        "question": "Les ingrédients sont-ils sûrs ?",
+        "answer": "Chaque ingrédient est traçable et passe des tests de pureté internationaux rigoureux."
+      }
+    ]
+  },
+  "footer": {
+    "follow_us": "Suivez-nous",
+    "add_wechat": "Ajouter WeChat",
+    "desc": "Dédié à l'utilisation de solutions scientifiques de coordination endocrine pour aider chaque client à trouver son état d'or.",
+    "contact_us": "Contactez-nous",
+    "email": "Astcare@outlook.com",
+    "address_val": "Bureau 114-2936, Centre de Service Civique Bat 2, 868 Avenue Gang'ao, Hengqin, Zhuhai",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation",
+    "all_rights_reserved": "© 2026 Cuilea. TOUS DROITS RÉSERVÉS."
+  },
+  "products": {
+    "coming_soon": "Bientôt Disponible",
+    "title": "Collection à Venir",
+    "desc": "Nous préparons méticuleusement une nouvelle collection. Restez à l'écoute."
+  },
+  "auth": {
+    "login_title": "Connexion Compte",
+    "login_subtitle": "Entrez votre numéro pour commencer immédiatement",
+    "google_login": "Connexion avec Google",
+    "phone_login": "Connexion Rapide par Téléphone",
+    "phone_label": "Sélectionnez le pays et entrez le numéro",
+    "phone_placeholder": "Numéro de téléphone",
+    "submit": "Entrer Maintenant",
+    "back": "Retour",
+    "secure_note": "Chiffré par le système, votre vie privée est sécurisée",
+    "error_login_failed": "Échec de la connexion",
+    "error_enter_phone": "Entrez le numéro",
+    "error_invalid_phone": "Numéro invalide",
+    "error_reg_failed": "Échec de l'enregistrement",
+    "error_enable_email": "Activez Email/Pass dans la console Firebase",
+    "error_method_disabled": "Méthode désactivée",
+    "error_system_busy": "Système occupé"
+  },
+  "gender": {
+    "thanks": "Bienvenue",
+    "desc": "Veuillez sélectionner votre genre pour un plan personnalisé.",
+    "male": "Homme",
+    "female": "Femme"
+  },
+  "app": {
+    "core_methodology": "Méthodologie de Base / 001",
+    "balance_beauty": "La Beauté de l'Équilibre",
+    "percieve_life": "De la Perception Précise de la Vie",
+    "not_just_product": "Pas Seulement un Produit",
+    "but_evolution": "Une Évolution de la Texture de Vie",
+    "wellness_desc": "Nous comprenons que l'amélioration des symptômes n'est qu'une solution temporaire.",
+    "expert_team": "Équipe d'Experts",
+    "global_users": "Utilisateurs Mondiaux",
+    "customer_satisfaction": "Satisfaction Client"
+  },
+  "methodologies": {
+    "brain": {
+      "title": "Ancre Émotionnelle",
+      "desc": "Les niveaux d'hormones affectent directement les neurones du cerveau, régulant les fluctuations émotionnelles."
+    },
+    "beauty": {
+      "title": "Décoration Invisible",
+      "desc": "La perte de collagène est étroitement liée aux hormones. La régulation scientifique redonne de l'éclat."
+    },
+    "harmony": {
+      "title": "Lien des Relations",
+      "desc": "Une vie harmonieuse nécessite une réponse physique. Réveillez la perception de votre corps."
+    }
+  },
+  "assessment": {
+    "title_sub": "Évaluation du Bien-être / Test d'Équilibre",
+    "title": "Évaluation du Rythme",
+    "desc": "Découvrez votre état de rythme biologique grâce à l'analyse scientifique.",
+    "step": "Étape",
+    "of": "sur",
+    "analysis": "Analyse du Rythme Biologique",
+    "yes_label": "Oui, souvent",
+    "yes_sub": "Présence Détectée",
+    "no_label": "Non, ça va",
+    "no_sub": "Rythme Équilibré",
+    "report_generated": "Rapport Généré",
+    "your_status": "Votre État",
+    "ideal_range": "Plage Idéale",
+    "overall_index": "Indice d'Équilibre Global",
+    "login_save": "Connectez-vous pour enregistrer vos résultats",
+    "get_whitepaper": "Obtenir le Livre Blanc",
+    "get_consultation": "Consultation d'Expert",
+    "processing": "Calcul en cours...",
+    "questions": [
+      "Vous sentez-vous fatigué l'après-midi ?",
+      "Votre peau semble-t-elle terne ou présente-t-elle des ridules ?",
+      "Avez-vous des sautes d'humeur ou de l'anxiété ?",
+      "L'intimité avec votre partenaire a-t-elle diminué ?",
+      "Votre sommeil est-il de mauvaise qualité ?",
+      "Votre esprit semble-t-il lent après un effort ?",
+      "Avez-vous des gonflements ou des fluctuations de poids ?",
+      "Avez-vous du mal à vous concentrer ?",
+      "La sensibilité de votre corps a-t-elle diminué ?",
+      "Vous réveillez-vous en vous sentant lourd ?"
+    ],
+    "dimensions": [
+      "Énergie",
+      "Métabolisme",
+      "Émotions",
+      "Intimité",
+      "Sommeil"
+    ],
+    "feedbacks": {
+      "high": "Votre équilibre est excellent. Maintenez ce mode de vie.",
+      "medium_high": "Votre état est stable mais présente quelques fluctuations mineures.",
+      "medium": "Votre corps vous envoie des signaux pour faire attention au rythme.",
+      "low": "Vous faites face à des défis d'équilibre. Une approche scientifique est recommandée."
+    }
+  },
+  "user": {
+    "please_login": "Veuillez vous connecter",
+    "unbound": "Non lié",
+    "premium_member": "Membre Premium",
+    "diamond_member": "Membre Diamant",
+    "basic_info": "Informations de Base",
+    "manage_profile": "Gérer votre profil",
+    "nickname": "Pseudo",
+    "contact": "Contact",
+    "reg_time": "Date d'inscription",
+    "select_avatar": "Choisir l'Avatar",
+    "updating_avatar": "Mise à jour de l'avatar..."
+  }
+}

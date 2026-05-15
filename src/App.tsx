@@ -3,16 +3,19 @@ import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Assessment from './components/Assessment';
 import QASection from './components/QASection';
-import AIAssistant from './components/AIAssistant';
 import Footer from './components/Footer';
-import CustomCursor from './components/CustomCursor';
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'motion/react';
 import { Sparkles, Brain, Heart } from 'lucide-react';
 import Lenis from 'lenis';
 
 import AuthModal from './components/AuthModal';
+import GenderModal from './components/GenderModal';
+import ProductsPage from './components/ProductsPage';
 
 import ScientificSystem from './components/ScientificSystem';
+import UserProfile from './components/user/UserProfile';
+import { useFirebase } from './contexts/FirebaseContext';
+import { useTranslation } from 'react-i18next';
 
 export function ParallaxImage({ src, alt }: { src: string, alt: string }) {
   const ref = useRef(null);
@@ -21,15 +24,16 @@ export function ParallaxImage({ src, alt }: { src: string, alt: string }) {
     offset: ["start end", "end start"]
   });
 
-  const y = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   return (
     <div ref={ref} className="relative aspect-[4/3] sm:aspect-square overflow-hidden rounded-[32px] sm:rounded-[40px] shadow-2xl gpu-accelerated pointer-events-none">
       <motion.img 
-        style={{ y, scale: 1.2 }}
+        style={{ y }}
+        initial={{ scale: 1.1 }}
         src={src} 
         alt={alt}
-        className="w-full h-full object-cover grayscale-[0.2] select-none"
+        className="w-full h-full object-cover grayscale-[0.2] select-none will-change-transform"
         referrerPolicy="no-referrer"
       />
       <div className="absolute inset-0 bg-brand-primary/5 mix-blend-multiply" />
@@ -38,7 +42,16 @@ export function ParallaxImage({ src, alt }: { src: string, alt: string }) {
 }
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<'public' | 'qa' | 'scientific'>('public');
+  const { t } = useTranslation();
+  const { user } = useFirebase();
+  const [activeTab, setActiveTab] = useState<'public' | 'qa' | 'scientific' | 'user'>('public');
+  const [showProducts, setShowProducts] = useState(false);
+
+  useEffect(() => {
+    if (!user && activeTab === 'user') {
+      setActiveTab('public');
+    }
+  }, [user, activeTab]);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
@@ -60,13 +73,13 @@ export default function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.5,
+      duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 0.8,
-      touchMultiplier: 1.5,
+      touchMultiplier: 1,
       infinite: false,
     });
 
@@ -87,18 +100,18 @@ export default function App() {
 
   const coreMethodologies = [
     {
-      title: "大脑的情绪锚点",
-      description: "性激素水平直接影响大脑神经元，调节情绪波动。一个平衡的状态，是您温柔且坚韧的力量源泉。",
+      title: t('methodologies.brain.title'),
+      description: t('methodologies.brain.desc'),
       Icon: Brain,
     },
     {
-      title: "容颜的无形装饰",
-      description: "胶原蛋白的流失与激素密切相关。科学调理，让您的肌肤重现通透感，由内而外散发自信磁场。",
+      title: t('methodologies.beauty.title'),
+      description: t('methodologies.beauty.desc'),
       Icon: Sparkles,
     },
     {
-      title: "亲密关系的化学键",
-      description: "和谐的夫妻生活需要身体的响应。调理好激素，唤醒身体感知力，让爱意重新在流动的韵律中升温。",
+      title: t('methodologies.harmony.title'),
+      description: t('methodologies.harmony.desc'),
       Icon: Heart,
     }
   ];
@@ -126,8 +139,11 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-brand-paper">
-      <CustomCursor />
+    <div className="min-h-screen bg-transparent relative selection:bg-brand-primary selection:text-white">
+      {/* Global Design Details */}
+      <div className="fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] mix-blend-overlay" 
+           style={{ backgroundImage: `url('https://grainy-gradients.vercel.app/noise.svg')` }} />
+      
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-brand-primary z-[200] origin-left"
@@ -140,47 +156,58 @@ export default function App() {
         openAuth={() => setIsAuthModalOpen(true)} 
       />
       
-      <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
-      
-      <AIAssistant />
+      <AnimatePresence>
+        {isAuthModalOpen && (
+          <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
+        )}
+      </AnimatePresence>
 
+      <AnimatePresence>
+        {showProducts && (
+          <ProductsPage onClose={() => setShowProducts(false)} />
+        )}
+      </AnimatePresence>
+      <GenderModal />
+      
       <AnimatePresence mode="wait">
         {activeTab === 'public' ? (
           <motion.main
             key="public"
-            initial={{ opacity: 0, scale: 0.98, filter: 'blur(10px)' }}
-            animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
-            exit={{ opacity: 0, scale: 1.02, filter: 'blur(10px)' }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="min-h-screen overflow-y-auto scroll-smooth gpu-accelerated"
+            className="min-h-screen overflow-y-auto scroll-smooth"
           >
-            <section className="min-h-screen shrink-0 content-visibility-auto">
-              <Hero onExplore={() => setActiveTab('scientific')} />
+            <section className="min-h-screen shrink-0">
+              <Hero onExplore={() => setActiveTab('scientific')} onProductsClick={() => setShowProducts(true)} />
             </section>
             
             {/* Value Proposition Slider */}
-            <section className="min-h-screen px-4 sm:px-6 lg:px-8 relative flex items-center bg-white py-20 content-visibility-auto">
-              <div className="max-w-7xl mx-auto w-full">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-brand-primary/20" />
+            <section className="min-h-screen px-4 sm:px-6 lg:px-8 relative flex items-center bg-transparent py-20 overflow-hidden">
+              <div className="max-w-7xl mx-auto w-full relative z-10">
+                
                 <div className="text-center mb-24">
-                  <motion.span 
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    className="text-subtle text-[10px] block mb-8"
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-brand-primary/10 bg-brand-primary/5 mb-8"
                   >
-                    Core Methodology / 核心支柱
-                  </motion.span>
-                  <h2 className="text-4xl sm:text-5xl md:text-8xl font-serif leading-[1.1] sm:leading-[0.9] flex flex-col items-center">
-                    <div className="overflow-hidden py-1">
+                    <div className="size-1 rounded-full bg-brand-primary animate-pulse" />
+                    <span className="text-subtle text-[8px] uppercase tracking-[0.4em] font-mono">{t('app.core_methodology')}</span>
+                  </motion.div>
+                  
+                  <h2 className="text-4xl sm:text-5xl md:text-8xl font-serif leading-[0.85] tracking-tighter flex flex-col items-center">
+                    <div className="overflow-hidden py-2">
                       <motion.span 
                         initial={{ y: "100%" }}
                         whileInView={{ y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="relative inline-block px-4"
+                        transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="relative inline-block px-10"
                       >
-                        平衡之美
-                        <div className="absolute inset-x-0 bottom-2 h-[30%] bg-brand-primary/5 -skew-x-12 -z-10 blur-[4px]" />
+                        {t('app.balance_beauty')}
+                        <div className="absolute inset-x-0 bottom-4 h-[20%] bg-brand-primary/10 -skew-x-12 -z-10 blur-[8px]" />
                       </motion.span>
                     </div>
                     <div className="overflow-hidden py-1">
@@ -188,17 +215,17 @@ export default function App() {
                         initial={{ y: "100%" }}
                         whileInView={{ y: 0 }}
                         viewport={{ once: true }}
-                        transition={{ delay: 0.2, duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-                        className="text-luxury text-3xl sm:text-4xl md:text-6xl block mt-4 sm:mt-0"
+                        transition={{ delay: 0.3, duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                        className="text-luxury text-xl sm:text-2xl md:text-5xl block mt-4 opacity-40 font-light italic"
                       >
-                        源于对生命的精准感知
+                        {t('app.percieve_life')}
                       </motion.span>
                     </div>
                   </h2>
                 </div>
 
                 <div className="relative max-w-5xl mx-auto px-2 sm:px-0">
-                  <div className="overflow-hidden rounded-[32px] sm:rounded-[48px] gpu-accelerated">
+                  <div className="overflow-hidden rounded-[24px] sm:rounded-[32px] gpu-accelerated">
                     <motion.div 
                       animate={{ x: `-${currentIndex * 100}%` }}
                       transition={{ 
@@ -209,26 +236,26 @@ export default function App() {
                     >
                       {coreMethodologies.map((item, idx) => (
                         <div key={idx} className="w-full shrink-0 px-1">
-                          <div className="glass-card group p-8 sm:p-10 md:p-16 h-full relative overflow-hidden">
-                            <div className="relative z-10 flex flex-col md:flex-row items-center gap-8 md:gap-12">
-                              <div className="w-16 h-16 sm:w-24 sm:h-24 bg-brand-primary/5 rounded-2xl sm:rounded-3xl flex items-center justify-center shrink-0">
-                                <item.Icon className="size-8 sm:size-12 text-brand-primary font-normal" />
+                          <div className="glass-card group p-6 sm:p-10 md:p-12 h-full relative overflow-hidden">
+                            <div className="relative z-10 flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                              <div className="w-12 h-12 sm:w-20 sm:h-20 bg-brand-primary/5 rounded-xl sm:rounded-2xl flex items-center justify-center shrink-0">
+                                <item.Icon className="size-6 sm:size-10 text-brand-primary font-normal" />
                               </div>
                               <div className="text-center md:text-left">
-                                <h3 className="text-2xl md:text-4xl font-serif italic mb-4 sm:mb-6">
+                                <h3 className="text-xl md:text-3xl font-serif italic mb-3 sm:mb-4">
                                   <span className="relative inline-block px-1">
                                     {item.title}
-                                    <div className="absolute bottom-1 inset-x-0 h-2 bg-brand-primary/10 -z-10" />
+                                    <div className="absolute bottom-1 inset-x-0 h-1.5 bg-brand-primary/10 -z-10" />
                                   </span>
                                 </h3>
-                                <p className="text-lg md:text-xl text-brand-ink/60 leading-relaxed font-light">
+                                <p className="text-base md:text-lg text-brand-ink/60 leading-relaxed font-light">
                                   {item.description}
                                 </p>
                               </div>
                             </div>
                             
                             {/* Decorative Background Element */}
-                            <div className="absolute top-0 right-0 w-48 h-48 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl" />
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl" />
                           </div>
                         </div>
                       ))}
@@ -236,12 +263,12 @@ export default function App() {
                   </div>
 
                   {/* Navigation Dots & Progress Bar */}
-                  <div className="flex justify-center gap-4 mt-12">
+                  <div className="flex justify-center gap-3 mt-10">
                     {coreMethodologies.map((_, idx) => (
                       <button
                         key={idx}
                         onClick={() => handleManualNav(idx)}
-                        className="relative w-12 h-[2px] bg-brand-ink/5 rounded-full overflow-hidden transition-all duration-300 hover:h-1"
+                        className="relative w-10 h-[1.5px] bg-brand-ink/5 rounded-full overflow-hidden transition-all duration-300 hover:h-1"
                       >
                         {idx === currentIndex && (
                           <motion.div 
@@ -260,13 +287,13 @@ export default function App() {
             </section>
 
             {/* Assessment Section */}
-            <section className="min-h-screen flex items-center bg-brand-paper/20 content-visibility-auto">
+            <section className="min-h-screen flex items-center bg-transparent content-visibility-auto">
               <div className="w-full">
                 <Assessment />
               </div>
             </section>
 
-            <section className="min-h-screen px-4 sm:px-6 lg:px-8 py-20 bg-white relative overflow-hidden flex items-center content-visibility-auto">
+            <section className="min-h-screen px-4 sm:px-6 lg:px-8 py-20 bg-transparent relative overflow-hidden flex items-center content-visibility-auto">
                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -290,16 +317,14 @@ export default function App() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: 0.2 }}
-                    className="space-y-8 sm:space-y-12 order-1 lg:order-2"
+                    className="space-y-6 sm:space-y-10 order-1 lg:order-2"
                   >
-                    <h2 className="text-4xl sm:text-6xl md:text-8xl font-serif leading-[1.1] sm:leading-[0.85] tracking-tighter">
-                      不仅是产品<br />
-                      更是<span className="text-luxury block sm:inline mt-2 sm:mt-0">生命质感</span>的进化
+                    <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif leading-[1.1] sm:leading-[0.85] tracking-tighter">
+                      {t('app.not_just_product')}<br />
+                      <span className="text-luxury block sm:inline mt-2 sm:mt-0">{t('app.but_evolution')}</span>
                     </h2>
-                    <p className="text-base sm:text-xl text-brand-ink/50 font-light leading-relaxed max-w-lg">
-                      在大健康领域，我们深知单一的症状改善只是权宜之计。
-                      <span className="text-brand-primary/80 font-normal italic">荷尔蒙之衡</span>通过全球前沿科研成果，精准对冲生理下降曲线，
-                      为追求极限体验与长效优雅的您，提供高能营养支持。
+                    <p className="text-sm sm:text-lg text-brand-ink/50 font-light leading-relaxed max-w-lg">
+                      {t('app.wellness_desc')}
                     </p>
                     <motion.div 
                       initial="hidden"
@@ -315,19 +340,19 @@ export default function App() {
                           }
                         }
                       }}
-                      className="grid grid-cols-3 gap-4 sm:gap-8 border-t border-brand-ink/5 pt-8 sm:pt-12 mt-10 sm:mt-16"
+                      className="grid grid-cols-3 gap-4 sm:gap-6 border-t border-brand-ink/5 pt-6 sm:pt-10 mt-8 sm:mt-12"
                     >
                       <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
-                        <span className="text-3xl sm:text-5xl font-serif text-brand-primary">15+</span>
-                        <p className="text-subtle text-[7px] sm:text-[8px] mt-2 sm:mt-3">科研专家团队</p>
+                        <span className="text-2xl sm:text-4xl font-serif text-brand-primary">15+</span>
+                        <p className="text-subtle text-[7px] sm:text-[8px] mt-2 group-hover:text-brand-ink transition-colors">{t('app.expert_team')}</p>
                       </motion.div>
                       <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
-                        <span className="text-3xl sm:text-5xl font-serif text-brand-primary">12W+</span>
-                        <p className="text-subtle text-[7px] sm:text-[8px] mt-2 sm:mt-3">全球真实用户</p>
+                        <span className="text-2xl sm:text-4xl font-serif text-brand-primary">12W+</span>
+                        <p className="text-subtle text-[7px] sm:text-[8px] mt-2">{t('app.global_users')}</p>
                       </motion.div>
                       <motion.div variants={{ hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } }}>
-                        <span className="text-3xl sm:text-5xl font-serif text-brand-primary">98%</span>
-                        <p className="text-subtle text-[7px] sm:text-[8px] mt-2 sm:mt-3">客户满意度</p>
+                        <span className="text-2xl sm:text-4xl font-serif text-brand-primary">98%</span>
+                        <p className="text-subtle text-[7px] sm:text-[8px] mt-2">{t('app.customer_satisfaction')}</p>
                       </motion.div>
                     </motion.div>
                   </motion.div>
@@ -354,7 +379,7 @@ export default function App() {
               <Footer />
             </section>
           </motion.div>
-        ) : (
+        ) : activeTab === 'scientific' ? (
           <motion.div
             key="scientific"
             initial={{ opacity: 0, x: 20 }}
@@ -364,6 +389,18 @@ export default function App() {
             className="min-h-screen overflow-y-auto"
           >
              <ScientificSystem />
+             <Footer />
+          </motion.div>
+        ) : (
+          <motion.div
+            key="user"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.02 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="min-h-screen overflow-y-auto"
+          >
+             <UserProfile />
              <Footer />
           </motion.div>
         )}

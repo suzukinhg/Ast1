@@ -29,12 +29,23 @@ service cloud.firestore {
     }
 
     // 2. Validation Blueprints
-    function isValidUser(data) {
+    function isValidUserCreate(data) {
       return data.keys().hasAll(['userId', 'createdAt'])
         && data.userId == request.auth.uid
         && (data.email == null || data.email is string)
         && (data.phoneNumber == null || data.phoneNumber is string)
+        && (data.displayName == null || data.displayName is string)
+        && (data.photoURL == null || data.photoURL is string)
         && data.createdAt == request.time;
+    }
+
+    function isValidUserUpdate(data) {
+      return data.userId == request.auth.uid
+        && (data.email == null || data.email is string)
+        && (data.phoneNumber == null || data.phoneNumber is string)
+        && (data.gender == null || data.gender is string)
+        && (data.displayName == null || data.displayName is string)
+        && (data.photoURL == null || data.photoURL is string);
     }
 
     function isValidAssessmentResult(data) {
@@ -49,8 +60,8 @@ service cloud.firestore {
     // 1. & 6. User Profiles (PII Isolation)
     match /users/{userId} {
       allow get: if isOwner(userId);
-      allow create: if isOwner(userId) && isValidUser(incoming());
-      allow update: if isOwner(userId) && isValidUser(incoming())
+      allow create: if isOwner(userId) && isValidUserCreate(incoming());
+      allow update: if isOwner(userId) && isValidUserUpdate(incoming())
         && incoming().userId == existing().userId
         && incoming().createdAt == existing().createdAt;
     }

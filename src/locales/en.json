@@ -1,0 +1,227 @@
+{
+  "nav": {
+    "philosophy": "Philosophy",
+    "scientific": "Science",
+    "qa": "Q&A",
+    "logout": "Logout",
+    "login": "VIP Member Login",
+    "philosophy_sub": "Philosophy",
+    "scientific_sub": "Scientific",
+    "qa_sub": "Consulting"
+  },
+  "hero": {
+    "slogan_1": "Hormonal",
+    "slogan_2": "Silent Art",
+    "description": "It is not just a physiological balance, but a reconstruction of <1>{{highlight}}</1>.",
+    "highlight": "magnetic charm and biological rhythm",
+    "cta_products": "Enjoy Now",
+    "cta_explore": "Explore Science",
+    "scroll_explore": "Scroll to Explore Ritual",
+    "subtitle": "Ritual of Grace · 2024",
+    "bg_alt": "Wellness Background"
+  },
+  "scientific": {
+    "marker": "Scientific Protocol 0.88",
+    "dossier": "The Scientific Dossier",
+    "title_1": "Internal &",
+    "title_2": "Resonant",
+    "title_3": "Life Rhythm",
+    "desc": "Ultimate formulation is the highest respect for life. We integrate global cutting-edge biological resources to weave a precise blueprint of life rhythm in every milliliter.",
+    "spotlight": "Ingredient Spotlight",
+    "qa_active": "Quality Assurance Active",
+    "synergy": "Complementary Synergy",
+    "synergy_desc": "Not just a single supplement, but comprehensive synergy. These micro yet critical components complete the final puzzle of bodily balance.",
+    "philosophy_quote": "\"What we refine is not just nutritional solutions, but a 'deep communication' with the body.\"",
+    "philosophy_desc": "At Cuilea, R&D is more than just stacking experimental data. It is respect for life's complexity and placing every molecule at the correct rhythm point.",
+    "research": "Global Synergy",
+    "advanced": "Bio-Tech Lab",
+    "traceable": "Source Origin",
+    "molecular_profile": "Molecular Profile",
+    "fig": "FIG.",
+    "purity": "Purity",
+    "bioavailability": "Bioavailability",
+    "max": "Max",
+    "cat_hydration": "Hydration",
+    "cat_vitality": "Vitality",
+    "cat_defense": "Defense",
+    "cat_balance": "Balance",
+    "ingredients": [
+      {
+        "name": "Fish Collagen Peptides & Tripeptides",
+        "desc": "Double molecular weight gradient penetration, deep repair of connective tissue. We use patented enzymatic technology to extract high-quality protein from deep-sea salmon, precisely cutting large molecules to the absorption limit, reshaping firm skin texture."
+      },
+      {
+        "name": "White Truffle & White Tomato",
+        "desc": "Meeting of polar whitening factors and forest diamonds. Rich in rare amino acids and carotenoids, it blocks free radicals and melanin from the inside out, radiating a flawless, transparent texture."
+      },
+      {
+        "name": "PQQ & Yeast Glucan",
+        "desc": "Cellular repair hub. PQQ empowers mitochondrial regeneration, combined with the glucan immune activation system, building a solid anti-aging defense forest inside the body."
+      }
+    ],
+    "others": {
+      "hyaluronic": "Sodium Hyaluronate",
+      "neuraminic": "N-Acetylneuraminic Acid",
+      "blood_orange": "Blood Orange & Grape Seed",
+      "peony": "Peony Peptide & Rose"
+    },
+    "stats": [
+      { "label": "Active Ingredients", "sub": "Synergistic Profile" },
+      { "label": "Extraction Rate", "sub": "Micron-level Tech" },
+      { "label": "Clinical Tests", "sub": "Participant Data" },
+      { "label": "Global Source", "sub": "Regional Origins" }
+    ]
+  },
+  "qa": {
+    "title_1": "Questions",
+    "title_2": "& Answers",
+    "cta_title": "Have any other questions?",
+    "cta_desc": "Our private health consultants are online 24/7 to provide you with one-on-one precise consulting services.",
+    "cta_btn": "Consult Now",
+    "faqs": [
+      {
+        "question": "What is the core philosophy of the 'Cuilea' series?",
+        "answer": "We don't just focus on breakthroughs in single indicators; we are committed to regulating endogenous balance through core ingredients like deep-sea salmon collagen peptides and PQQ, delaying the physiological aging curve from the cellular level. Our goal is to help you rediscover that long-lost, lifelike state of balance for you."
+      },
+      {
+        "question": "Will long-term consumption lead to dependence?",
+        "answer": "'Cuilea' products use natural exquisite ingredients, such as polar white truffles and patented enzymatic tripeptides. They are designed to repair and empower the body's own systems rather than replace body functions. We maintain pure formulas without artificial hormones, allowing the body to be reborn in natural rhythm."
+      },
+      {
+        "question": "How long is the typical visible result cycle?",
+        "answer": "Based on feedback from ten thousand real users, fine-tuning of physiological functions usually appears in 1-2 cycles (about 28-56 days). Initial signs often include improved sleep quality and stable energy status, followed by comprehensive repair of skin elasticity and body perception."
+      },
+      {
+        "question": "Who is it suitable for?",
+        "answer": "Suitable for adults who pursue excellent quality of life, are in high-pressure career periods, and want to precisely manage their health curves. Especially for high-end professionals who wish to maintain an elegant appearance and abundant physical energy even in busy urban rhythms, it is an ideal choice."
+      },
+      {
+        "question": "Are the product ingredients trustworthy?",
+        "answer": "All ingredients are traceable. Every gram of raw material we choose undergoes rigorous laboratory screening, from deep-sea essences to polar botanical active factors, all passing internationally recognized purity tests to ensure the highest safety baseline while providing high-efficiency nutrition."
+      }
+    ]
+  },
+  "footer": {
+    "follow_us": "Follow Us",
+    "add_wechat": "Add Enterprise WeChat",
+    "desc": "Dedicated to using scientific endocrine coordination solutions to help every client find their golden state, reshape personal charm, and build a harmonious family life.",
+    "contact_us": "Contact Us",
+    "email": "Astcare@outlook.com",
+    "address_val": "Room 114-2936, Civic Service Center Bldg 2, 868 Gang'ao Ave, Hengqin, Zhuhai",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "all_rights_reserved": "© 2026 Cuilea. ALL RIGHTS RESERVED."
+  },
+  "products": {
+    "coming_soon": "Coming Soon",
+    "title": "Product Collection Launching Soon",
+    "desc": "We are meticulously crafting a new collection of products. Beautiful product imagery and detailed design pages are in preparation. Stay tuned."
+  },
+  "auth": {
+    "login_title": "Account Login",
+    "login_subtitle": "No verification code needed, enter your phone number to start immediately",
+    "google_login": "Login with Google",
+    "phone_login": "Quick Login with Phone",
+    "phone_label": "Please select country/region and enter number",
+    "phone_placeholder": "Enter phone number",
+    "submit": "Enter Now",
+    "back": "Back to other methods",
+    "secure_note": "Encrypted by system, your privacy is secure",
+    "error_login_failed": "Login failed",
+    "error_enter_phone": "Please enter phone number",
+    "error_invalid_phone": "Please enter a valid phone number",
+    "error_reg_failed": "Registration failed",
+    "error_enable_email": "Please enable Email/Password login in Firebase Console",
+    "error_method_disabled": "Login method disabled: Please enable Email/Password in Firebase Console",
+    "error_system_busy": "System busy: Please check network"
+  },
+  "gender": {
+    "thanks": "Welcome",
+    "desc": "To provide you with a more precise customized plan, please select your gender. This information will be stored with encryption.",
+    "male": "Male",
+    "female": "Female"
+  },
+  "app": {
+    "core_methodology": "Core Methodology / 001",
+    "balance_beauty": "The Beauty of Balance",
+    "percieve_life": "Derived from Precise Perception of Life",
+    "not_just_product": "Not Just a Product",
+    "but_evolution": "But an Evolution of Life Texture",
+    "wellness_desc": "In the field of wellness, we know that single symptom improvement is only temporary. Cuilea uses global cutting-edge research to precisely counter physiological decline curves, providing high-energy nutritional support for you who pursue ultimate experience and long-term elegance.",
+    "expert_team": "Expert Research Team",
+    "global_users": "Global Real Users",
+    "customer_satisfaction": "Customer Satisfaction"
+  },
+  "methodologies": {
+    "brain": {
+      "title": "Brain's Emotional Anchor",
+      "desc": "Hormone levels directly affect brain neurons, regulating emotional fluctuations. A balanced state is your source of gentle and tough power."
+    },
+    "beauty": {
+      "title": "Invisible Facial Decoration",
+      "desc": "Collagen loss is closely related to hormones. Scientific regulation re-displays the transparency of your skin, radiating confidence from the inside out."
+    },
+    "harmony": {
+      "title": "Chemical Bond of Intimacy",
+      "desc": "Harmonious couple life requires physical response. Regulate hormones, awaken physical perception, and let love warm up again in the flowing rhythm."
+    }
+  },
+  "assessment": {
+    "title_sub": "Wellness Assessment / Balance Self-Test",
+    "title": "Precision Rhythm Assessment",
+    "desc": "Explore your physiological rhythm status through scientific dimensional analysis, and get personalized balance and charm solutions.",
+    "step": "Step",
+    "of": "of",
+    "analysis": "Biological Rhythm Analysis",
+    "yes_label": "Yes, often so",
+    "yes_sub": "Presence Detected",
+    "no_label": "No, okay for now",
+    "no_sub": "Balanced Rhythm",
+    "report_generated": "Assessment Report Generated",
+    "your_status": "Your Status",
+    "ideal_range": "Ideal Range",
+    "overall_index": "Overall Balance Index",
+    "login_save": "Login to permanently save your assessment records",
+    "get_whitepaper": "Get Free Whitepaper",
+    "get_consultation": "Get Expert Consultation",
+    "processing": "Processing calculation results...",
+    "questions": [
+      "Are you feeling a drop in energy, easily tired in the afternoon?",
+      "Does your skin show dullness, spots, or fine lines that are hard to repair?",
+      "Are emotional fluctuations larger, easily anxious or low?",
+      "Has the intimacy of interaction with your partner declined?",
+      "Is sleep quality worse, making it hard to enter deep sleep?",
+      "Do you feel slow-reacting after mental activity, thinking less agile than before?",
+      "Are there local swellings in the body, or weight highly affected by diet fluctuations?",
+      "Do you often feel upset, hard to focus on work at hand?",
+      "Has body sensitivity become dull, with weakened response to touch and warmth?",
+      "Do you feel heavy all over after waking up, as if not truly rested?"
+    ],
+    "dimensions": [
+      "Energy",
+      "Metabolism",
+      "Emotions",
+      "Intimacy",
+      "Sleep"
+    ],
+    "feedbacks": {
+      "high": "Your physiological balance is excellent, and the natural rhythm in the body is in high-efficiency and harmonious operation. Continue to maintain your current lifestyle, which has laid a solid foundation for your long-lasting charm.",
+      "medium_high": "Your physiological state is currently stable overall, but local areas may be affected by the external environment or recent stress, showing subtle fluctuation signals. Through scientific rhythm adjustment and precise nutritional supplementation, you can easily let the sense of balance return to the peak again.",
+      "medium": "Current assessment shows that your body system is alerting you to focus on internal rhythm through weak signals. This does not mean a health hazard, but prompts you to focus on the scientific synergy of hormone levels and emotional rhythm. Professional gentle intervention will significantly improve your life texture.",
+      "low": "It is detected that your physiological state is facing certain balance challenges, which may have been subtly reflected in your daily vitality and exterior performance. It is recommended to scientifically examine from the perspective of hormone balance, and help the body find back the original harmonious rhythm through phased precise sequencing."
+    }
+  },
+  "user": {
+    "please_login": "Please Login First",
+    "unbound": "Unbound",
+    "premium_member": "Premium Member",
+    "diamond_member": "Diamond Member",
+    "basic_info": "Basic Information",
+    "manage_profile": "Manage Your Profile",
+    "nickname": "Nickname",
+    "contact": "Contact",
+    "reg_time": "Registration Time",
+    "select_avatar": "Select Avatar",
+    "updating_avatar": "Updating avatar..."
+  }
+}

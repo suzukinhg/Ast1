@@ -1,0 +1,36 @@
+server {
+    listen 80;
+    server_name yourdomain.com; # 替换为您的域名或IP
+
+    root /path/to/your/cuilea-app/dist; # 替换为您项目构建产物的绝对路径
+    index index.html;
+
+    # Gzip 压缩：提高网页在手机端的加载速度
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+
+    location / {
+        # 核心配置：转发请求给 Node.js 后端服务器
+        proxy_pass http://127.0.0.1:3000; 
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        # 适当增加超时限制，防止后端处理慢导致的 504
+        proxy_connect_timeout 60s;
+        proxy_send_timeout 60s;
+        proxy_read_timeout 60s;
+    }
+
+    # 静态资源缓存策略
+    location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|otf)$ {
+        expires 30d;
+        add_header Cache-Control "public, no-transform";
+    }
+
+    # 禁用点击劫持保护 (根据需要开启)
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+}
