@@ -1,9 +1,21 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const aiClient: { instance: GoogleGenAI | null } = { instance: null };
+
+function getAI() {
+  if (!aiClient.instance) {
+    const key = process.env.GEMINI_API_KEY;
+    if (!key || key === 'undefined' || key === '') {
+      throw new Error("API Key missing. Please configure GEMINI_API_KEY.");
+    }
+    aiClient.instance = new GoogleGenAI({ apiKey: key });
+  }
+  return aiClient.instance;
+}
 
 export async function getHealthAdvice(prompt: string, history: { role: 'user' | 'model', parts: { text: string }[] }[] = []) {
   try {
+    const ai = getAI();
     const chat = ai.chats.create({
       model: "gemini-3-flash-preview",
       config: {
