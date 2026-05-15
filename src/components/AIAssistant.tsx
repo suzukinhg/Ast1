@@ -9,16 +9,6 @@ interface Message {
   content: string;
 }
 
-const OFFLINE_KNOWLEDGE_BASE: Record<string, string> = {
-  'default': '当前处于离线咨询模式。我是您的本地健康顾问。对于更深度的个人化分析，请在连接网络后再次咨询。您可以尝试询问：睡眠、饮食、运动、压力等关键词。',
-  '睡眠': '### 关于睡眠与荷尔蒙\n优质睡眠是荷尔蒙平衡的基石。建议：\n1. **规律作息**：每晚 11 点前入睡，维持生物钟稳定。\n2. **黑暗环境**：促进褪黑素分泌，这对黄体酮平衡至11q要。\n3. **减少蓝光**：睡前 1 小时停止使用电子产品。',
-  '饮食': '### 荷尔蒙友好饮食\n1. **优质蛋白**：每餐摄入足够的鱼、瘦肉或豆类。\n2. **健康脂肪**：牛油果、坚果和橄榄油可促进性激素合成。\n3. **升糖控制**：减少精制糖和白面粉，稳定胰岛素水平。',
-  '运动': '### 运动建议\n1. **力量训练**：每周 2-3 次，有助于维持代谢率和胰岛素敏感性。\n2. **柔和运动**：经期建议进行瑜伽、拉伸或快走。\n3. **避免过度**：过高强度的运动可能引发皮质醇过载。',
-  '压力': '### 压力管理\n长期高压力会消耗孕酮，导致“皮质醇盗取”。建议：\n1. **深呼吸训练**：每天三次，每次 5 分钟。\n2. **植物力量**：如南非醉茄等成分有助于平衡压力响应。',
-  '痛经': '### 缓解经前不适\n1. **热敷**：促进盆腔血液循环。\n2. **镁元素**：有助于缓解平滑肌收缩。\n3. **抗炎饮食**：减少饱和脂肪，增加 Omega-3。',
-  '皮肤': '### 荷尔蒙与肤质\n下巴周围的爆发往往与雄激素波动有关。建议关注肠道健康与糖分摄入，并保持充足水分。'
-};
-
 export default function AIAssistant() {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
@@ -26,7 +16,6 @@ export default function AIAssistant() {
     { role: 'model', content: '您好！我是您的专属荷尔蒙健康顾问。有什么我可以帮您的吗？无论关于评估结果、产品建议还是生活方式调理，我都在这里。' }
   ]);
   const [isLoading, setIsLoading] = useState(false);
-  const [isOnline, setIsOnline] = useState(navigator.onLine);
   const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,63 +25,43 @@ export default function AIAssistant() {
   }, []);
 
   useEffect(() => {
-    const handleStatusChange = () => setIsOnline(navigator.onLine);
-    window.addEventListener('online', handleStatusChange);
-    window.addEventListener('offline', handleStatusChange);
-
-    return () => {
-      window.removeEventListener('online', handleStatusChange);
-      window.removeEventListener('offline', handleStatusChange);
-    };
-  }, []);
-
-  useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages]);
 
-  const getLocalResponse = (query: string): string => {
-    const queryLower = query.toLowerCase();
-    for (const key in OFFLINE_KNOWLEDGE_BASE) {
-      if (queryLower.includes(key)) {
-        return OFFLINE_KNOWLEDGE_BASE[key];
-      }
-    }
-    return OFFLINE_KNOWLEDGE_BASE['default'];
-  };
-
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
-    const userMessage = input.trim();
+    const userQuery = input.trim();
+    setMessages(prev => [...prev, { role: 'user', content: userQuery }]);
     setInput('');
-    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
     setIsLoading(true);
 
-    if (!isOnline) {
-      // Simulate small delay for local processing
-      setTimeout(() => {
-        const localReply = getLocalResponse(userMessage);
-        setMessages(prev => [...prev, { role: 'model', content: `[离线模式] ${localReply}` }]);
-        setIsLoading(false);
-      }, 800);
-      return;
-    }
-
     try {
-      // Map history for Gemini SDK
+      const hasApiKey = process.env.GEMINI_API_KEY && process.env.GEMINI_API_KEY !== 'undefined';
+      
+      if (!navigator.onLine || !hasApiKey) {
+        throw new Error('OFFLINE_OR_NO_KEY');
+      }
+
       const history = messages.map(msg => ({
         role: msg.role,
         parts: [{ text: msg.content }]
       }));
 
-      const response = await getHealthAdvice(userMessage, history);
-      setMessages(prev => [...prev, { role: 'model', content: response || '握手协议超时，请重试。' }]);
+      const response = await getHealthAdvice(userQuery, history);
+      if (!response) throw new Error('EMPTY_RESPONSE');
+      setMessages(prev => [...prev, { role: 'model', content: response }]);
     } catch (error) {
-      // Fallback to local on API error
-      const localReply = getLocalResponse(userMessage);
-      setMessages(prev => [...prev, { role: 'model', content: `[网络连接异常，为您匹配本地专家建议] ${localReply}` }]);
+      // 优雅降级：当 AI 无法响应或超时时，提供一致的专业引导
+      setTimeout(() => {
+        setMessages(prev => [...prev, { 
+          role: 'model', 
+          content: '抱歉，当前咨询的人数较多，为了确保给您提供精准的参数建议，建议您稍后再试，或通过官网顶部联系【私人健康顾问】。' 
+        }]);
+        setIsLoading(false);
+      }, 800);
     } finally {
       setIsLoading(false);
     }
@@ -129,9 +98,9 @@ export default function AIAssistant() {
                 <div>
                   <h3 className="font-serif text-lg font-medium">荷尔蒙智慧助手</h3>
                   <div className="flex items-center gap-1.5">
-                    <div className={`w-1.5 h-1.5 rounded-full ${isOnline ? 'bg-green-400' : 'bg-orange-400'} animate-pulse`} />
+                    <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
                     <p className="text-[10px] uppercase tracking-widest opacity-70">
-                      {isOnline ? 'Active Online' : 'Expert Offline Mode'}
+                      Precision Health AI Active
                     </p>
                   </div>
                 </div>
@@ -143,6 +112,7 @@ export default function AIAssistant() {
                 <X size={24} />
               </button>
             </div>
+
 
             {/* Messages */}
             <div 

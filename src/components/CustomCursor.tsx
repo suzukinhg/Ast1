@@ -5,7 +5,7 @@ export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
 
-  const springConfig = { stiffness: 150, damping: 20, mass: 0.5 };
+  const springConfig = { stiffness: 400, damping: 35, mass: 0.2 };
   const cursorX = useSpring(0, springConfig);
   const cursorY = useSpring(0, springConfig);
 
@@ -38,7 +38,7 @@ export default function CustomCursor() {
         left: -12,
         top: -12,
       }}
-      className="fixed pointer-events-none z-[9999] hidden md:block"
+      className="fixed pointer-events-none z-[9999] hidden md:block gpu-accelerated"
       animate={{
         scale: isHovering ? 2.5 : 1,
       }}

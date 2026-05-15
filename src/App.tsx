@@ -152,14 +152,14 @@ export default function App() {
             animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
             exit={{ opacity: 0, scale: 1.02, filter: 'blur(10px)' }}
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="min-h-screen overflow-y-auto scroll-smooth"
+            className="min-h-screen overflow-y-auto scroll-smooth gpu-accelerated"
           >
-            <section className="min-h-screen shrink-0">
+            <section className="min-h-screen shrink-0 content-visibility-auto">
               <Hero onExplore={() => setActiveTab('scientific')} />
             </section>
             
             {/* Value Proposition Slider */}
-            <section className="min-h-screen px-4 sm:px-6 lg:px-8 relative flex items-center bg-white py-20">
+            <section className="min-h-screen px-4 sm:px-6 lg:px-8 relative flex items-center bg-white py-20 content-visibility-auto">
               <div className="max-w-7xl mx-auto w-full">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-brand-primary/20" />
                 <div className="text-center mb-24">
@@ -260,13 +260,13 @@ export default function App() {
             </section>
 
             {/* Assessment Section */}
-            <section className="min-h-screen flex items-center bg-brand-paper/20">
+            <section className="min-h-screen flex items-center bg-brand-paper/20 content-visibility-auto">
               <div className="w-full">
                 <Assessment />
               </div>
             </section>
 
-            <section className="min-h-screen px-4 sm:px-6 lg:px-8 py-20 bg-white relative overflow-hidden flex items-center">
+            <section className="min-h-screen px-4 sm:px-6 lg:px-8 py-20 bg-white relative overflow-hidden flex items-center content-visibility-auto">
                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.95 }}

@@ -12,9 +12,18 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   body {
     @apply bg-brand-paper text-brand-ink font-sans antialiased selection:bg-brand-primary/20;
     letter-spacing: -0.01em;
+    overscroll-behavior-y: none;
+    touch-action: manipulation;
   }
   
   h1, h2, h3, h4 {
@@ -29,6 +38,15 @@
   
   .premium-gradient {
     background: radial-gradient(circle at top right, rgba(197, 164, 126, 0.1), transparent 70%);
+  }
+
+  .smooth-transition {
+    transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 500px;
   }
 
   .text-reveal {
