@@ -21,30 +21,31 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
   const opacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-[100vh] flex items-center pt-20 overflow-hidden bg-transparent">
+    <section ref={ref} className="relative min-h-[90vh] flex items-center pt-16 overflow-hidden bg-transparent">
       <motion.div 
-        style={{ y, scale, opacity }} 
+        style={{ y, scale, opacity: 1 }} 
         className="absolute inset-0 z-0 gpu-accelerated overflow-hidden pointer-events-none will-change-transform"
       >
         <img 
           src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=2000" 
           alt={t('hero.bg_alt')}
-          className="w-full h-full object-cover opacity-40 brightness-110 contrast-[1.05] grayscale-[0.2] select-none"
+          className="w-full h-full object-cover opacity-30 brightness-75 contrast-[1.2] grayscale-[0.3] select-none scale-105"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-paper via-brand-paper/90 to-transparent" />
+        <div className="absolute inset-0 bg-brand-paper/40 backdrop-blur-[1px]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-paper via-brand-paper/60 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-paper" />
       </motion.div>
 
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(138,141,145,0.15),transparent_70%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(197,160,89,0.1),transparent_70%)] pointer-events-none" />
       
       <motion.div 
-        style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]) }}
-        className="absolute top-1/3 -right-20 w-[500px] h-[500px] bg-brand-primary/5 rounded-full blur-[150px] pointer-events-none" 
+        style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]) }}
+        className="absolute top-1/4 -right-40 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[180px] pointer-events-none" 
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-        <motion.div style={{ opacity }} className="max-w-3xl">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+        <motion.div style={{ opacity: useTransform(scrollYProgress, [0, 0.5], [1, 0.4]) }} className="max-w-3xl">
             <motion.div
               initial="hidden"
               animate="visible"
@@ -65,7 +66,7 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
                 className="flex items-center gap-4 mb-8"
               >
                 <div className="h-[1px] w-8 bg-brand-primary/40" />
-                <span className="text-[9px] uppercase tracking-[0.5em] font-medium text-brand-primary">
+                <span className="text-[8px] uppercase tracking-[0.5em] font-medium text-brand-primary">
                   {t('hero.subtitle')}
                 </span>
               </motion.div>
@@ -81,22 +82,22 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
                     } 
                   } 
                 }}
-                className="text-5xl sm:text-7xl md:text-8xl leading-[0.9] font-light mb-10 tracking-tighter relative gpu-accelerated"
+                className="text-5xl sm:text-7xl md:text-8xl leading-tight font-light mb-10 tracking-tighter relative gpu-accelerated"
               >
-                <span className="relative inline-block overflow-hidden py-2 -my-2 px-1">
+                <span className="relative inline-block overflow-hidden py-4 -my-4 px-1">
                   <motion.span 
                     variants={{ hidden: { y: "110%" }, visible: { y: 0 } }}
-                    transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     className="relative z-10 block italic font-serif text-brand-primary"
                   >
                     {t('hero.slogan_1')}
                   </motion.span>
                 </span>
                 <br />
-                <span className="overflow-hidden py-2 -my-2 px-1 inline-block">
+                <span className="overflow-hidden py-4 -my-4 px-1 inline-block">
                   <motion.span 
                     variants={{ hidden: { y: "110%" }, visible: { y: 0 } }}
-                    transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
+                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                     className="text-brand-ink block font-light tracking-wider"
                   >
                     {t('hero.slogan_2')}
@@ -106,10 +107,11 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
 
               <motion.div 
                 variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
-                transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
+                transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 className="mb-12 border-l-[1px] border-brand-primary/10 pl-6 space-y-4"
               >
-                <div className="text-lg md:text-2xl text-brand-ink/50 leading-relaxed font-light max-w-xl">
+
+                <div className="text-lg md:text-2xl text-brand-ink/80 leading-relaxed font-light max-w-xl">
                   <Trans i18nKey="hero.description">
                     这不只是生理的平衡，而是一场关于{" "}
                     <span className="text-brand-ink font-normal relative inline-block">
@@ -144,12 +146,12 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
               >
                 <button 
                   onClick={onProductsClick}
-                  className="group relative bg-brand-ink text-brand-paper px-10 py-5 rounded-full text-[10px] uppercase tracking-[0.3em] overflow-hidden transition-all active:scale-95 shadow-lg hover:shadow-2xl hover:shadow-brand-ink/30 hover:-translate-y-1"
+                  className="group relative bg-brand-primary text-brand-paper px-10 py-5 rounded-full text-[10px] uppercase tracking-[0.3em] overflow-hidden transition-all active:scale-95 shadow-lg hover:shadow-2xl hover:shadow-brand-primary/30 hover:-translate-y-1"
                 >
                   <span className="relative z-10 flex items-center gap-2">
                     {t('hero.cta_products')} <ArrowRight size={12} className="group-hover:translate-x-1 transition-transform duration-500" />
                   </span>
-                  <div className="absolute inset-0 bg-brand-primary translate-y-full group-hover:translate-y-0 transition-transform duration-1000 ease-[0.16,1,0.3,1]" />
+                  <div className="absolute inset-0 bg-brand-ink translate-y-full group-hover:translate-y-0 transition-transform duration-1000 ease-[0.16,1,0.3,1]" />
                 </button>
                 
                 <button 

@@ -56,14 +56,12 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-1000 ease-[0.16, 1, 0.3, 1] ${
+    <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-700 ease-[0.16, 1, 0.3, 1] ${
       scrolled 
-        ? 'bg-brand-paper/80 backdrop-blur-3xl border-b border-brand-ink/5 pt-3 pb-3 shadow-[0_1px_10px_rgba(0,0,0,0.02)]' 
-        : 'bg-brand-paper/40 backdrop-blur-xl border-b border-white/10 pt-5 pb-5'
+        ? 'bg-brand-paper/95 backdrop-blur-3xl border-b border-brand-primary/10 pt-2 pb-2 shadow-[0_4px_30px_rgba(0,0,0,0.5)]' 
+        : 'bg-transparent pt-6 pb-4'
     }`}>
-      {/* Texture Overlay */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03] mix-blend-overlay" 
-           style={{ backgroundImage: `url('https://grainy-gradients.vercel.app/noise.svg')` }} />
+      {/* Removed texture overlay for performance */}
       
       {/* Decorative Navigation Accents */}
       <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-brand-primary/10 to-transparent opacity-50" />
@@ -142,14 +140,14 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
                 <ChevronDown size={14} className={`transition-transform duration-300 hidden sm:block ${langOpen ? 'rotate-180' : ''}`} />
               </button>
               
-              <AnimatePresence>
+                  <AnimatePresence>
                 {langOpen && (
                   <motion.div 
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 top-full mt-2 w-36 bg-white rounded-2xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] border border-brand-ink/5 overflow-hidden py-2"
+                    className="absolute right-0 top-full mt-2 w-36 bg-brand-paper/90 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/5 overflow-hidden py-2"
                   >
                     {languages.map((lang) => (
                       <button
@@ -193,13 +191,13 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
             ) : (
               <button 
                 onClick={openAuth}
-                className="group relative px-5 sm:px-8 py-2.5 sm:py-3 bg-orange-500 text-white rounded-full overflow-hidden transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
+                className="group relative px-5 sm:px-8 py-2.5 sm:py-3 bg-brand-primary text-brand-paper rounded-full overflow-hidden transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
               >
                 <div className="relative z-10 flex items-center gap-2 text-xs sm:text-sm font-medium tracking-wide">
                   <UserIcon size={16} className="group-hover:scale-110 transition-transform" />
                   <span className="hidden xs:inline">{t('nav.login')}</span>
                 </div>
-                <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-brand-ink translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
               </button>
             )}
           </div>
