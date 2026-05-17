@@ -27,10 +27,12 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
         className="absolute inset-0 z-0 gpu-accelerated overflow-hidden pointer-events-none will-change-transform"
       >
         <img 
-          src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=2000" 
+          src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=2000&fm=webp" 
           alt={t('hero.bg_alt')}
           className="w-full h-full object-cover opacity-30 brightness-75 contrast-[1.2] grayscale-[0.3] select-none scale-105"
           referrerPolicy="no-referrer"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-brand-paper/40 backdrop-blur-[1px]" />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-paper via-brand-paper/60 to-transparent" />
@@ -82,13 +84,13 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
                     } 
                   } 
                 }}
-                className="text-5xl sm:text-7xl md:text-8xl leading-tight font-light mb-10 tracking-tighter relative gpu-accelerated"
+                className="text-6xl sm:text-7xl md:text-[5.5rem] lg:text-[7.5rem] leading-[1.05] mb-10 tracking-tighter relative gpu-accelerated font-serif"
               >
                 <span className="relative inline-block overflow-hidden py-4 -my-4 px-1">
                   <motion.span 
                     variants={{ hidden: { y: "110%" }, visible: { y: 0 } }}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative z-10 block italic font-serif text-brand-primary"
+                    className="relative z-10 block italic font-medium text-brand-primary drop-shadow-lg"
                   >
                     {t('hero.slogan_1')}
                   </motion.span>
@@ -98,7 +100,7 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
                   <motion.span 
                     variants={{ hidden: { y: "110%" }, visible: { y: 0 } }}
                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                    className="text-brand-ink block font-light tracking-wider"
+                    className="text-white block font-semibold tracking-[-0.04em] drop-shadow-xl"
                   >
                     {t('hero.slogan_2')}
                   </motion.span>

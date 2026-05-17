@@ -26,6 +26,8 @@ const IngredientCard = ({ item, index }: { item: any, index: number }) => {
             alt={item.name}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[3s] ease-out"
             referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-gradient-to-tr from-brand-ink/40 via-transparent to-transparent opacity-60" />
         </div>
@@ -107,19 +109,19 @@ const ScientificSystem = () => {
     { 
       name: t('scientific.ingredients.0.name'), 
       desc: t('scientific.ingredients.0.desc'), 
-      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=1200",
+      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=1200&fm=webp",
       icon: <Droplets className="size-6" />
     },
     { 
       name: t('scientific.ingredients.1.name'), 
       desc: t('scientific.ingredients.1.desc'), 
-      image: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?auto=format&fit=crop&q=80&w=1200", 
+      image: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?auto=format&fit=crop&q=80&w=1200&fm=webp", 
       icon: <Sparkles className="size-6" />
     },
     { 
       name: t('scientific.ingredients.2.name'), 
       desc: t('scientific.ingredients.2.desc'), 
-      image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1200", 
+      image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1200&fm=webp", 
       icon: <Zap className="size-6" />
     }
   ];
@@ -240,10 +242,12 @@ const ScientificSystem = () => {
             >
               <div className="aspect-square rounded-[32px] overflow-hidden image-container-modern shadow-2xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2000" 
+                  src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2000&fm=webp" 
                   alt="Scientific Purity" 
                   className="w-full h-full object-cover grayscale-[0.5] opacity-60 mix-blend-luminosity"
                   referrerPolicy="no-referrer"
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-[#121214]/70 backdrop-blur-[2px]" />
                 

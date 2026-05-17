@@ -17,8 +17,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-1 md:col-span-2 space-y-6">
             <div className="flex flex-col gap-1 border-l border-brand-primary/30 pl-6 group">
-              <span className="brand-logo-text text-3xl sm:text-4xl text-white group-hover:text-brand-primary transition-colors cursor-default">萃丽妍</span>
-              <span className="brand-sub-text text-[9px] text-brand-primary/40 ml-0.5 tracking-[0.4em]">CUILEA</span>
+              <span className="brand-logo-text text-3xl sm:text-4xl text-white group-hover:text-brand-primary transition-colors cursor-default">Astcare</span>
+              <span className="brand-sub-text text-[9px] text-brand-primary/40 ml-0.5 tracking-[0.4em]">ASTCARE</span>
             </div>
             <p className="text-brand-ink/60 max-w-xs leading-relaxed font-light text-xs italic pl-6">
               {t('footer.desc')}

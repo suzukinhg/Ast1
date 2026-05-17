@@ -67,10 +67,12 @@ const QAItem = ({ item, index }: { item: any, index: number }) => {
           <motion.img
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 1.5 }}
-            src={item.image}
+            src={item.image + "&fm=webp"}
             alt="FAQ Detail"
             className="w-full h-full object-cover grayscale-[0.2]"
             referrerPolicy="no-referrer"
+            loading="lazy"
+            decoding="async"
           />
           <div className="absolute inset-0 bg-brand-primary/10 mix-blend-overlay" />
         </div>

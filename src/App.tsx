@@ -35,6 +35,8 @@ export function ParallaxImage({ src, alt }: { src: string, alt: string }) {
         alt={alt}
         className="w-full h-full object-cover grayscale-[0.2] select-none will-change-transform"
         referrerPolicy="no-referrer"
+        loading="lazy"
+        decoding="async"
       />
       <div className="absolute inset-0 bg-brand-primary/5 mix-blend-multiply" />
     </div>
@@ -302,7 +304,7 @@ export default function App() {
                   >
                     <div className="aspect-[16/10] overflow-hidden rounded-[24px] shadow-2xl">
                       <ParallaxImage 
-                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200" 
+                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200&fm=webp" 
                         alt="Scientific Wellness"
                       />
                     </div>
