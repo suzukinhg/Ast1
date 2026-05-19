@@ -170,7 +170,7 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
             </div>
 
             {/* Auth Area */}
-            {user ? (
+            {user && (
               <div className="flex items-center gap-3">
                 <button 
                   onClick={async () => {
@@ -188,17 +188,6 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
                   <img src={user.photoURL || `https://api.dicebear.com/7.x/avataaars/svg?seed=${user.uid}`} alt="Avatar" className="w-full h-full object-cover" />
                 </div>
               </div>
-            ) : (
-              <button 
-                onClick={openAuth}
-                className="group relative px-5 sm:px-8 py-2.5 sm:py-3 bg-brand-primary text-brand-paper rounded-full overflow-hidden transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-0.5"
-              >
-                <div className="relative z-10 flex items-center gap-2 text-xs sm:text-sm font-medium tracking-wide">
-                  <UserIcon size={16} className="group-hover:scale-110 transition-transform" />
-                  <span className="hidden xs:inline">{t('nav.login')}</span>
-                </div>
-                <div className="absolute inset-0 bg-brand-ink translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              </button>
             )}
           </div>
         </div>

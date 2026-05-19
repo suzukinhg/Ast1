@@ -19,7 +19,8 @@ i18n
       'fr-FR': { translation: fr },
       'ko-KR': { translation: ko }
     },
-    fallbackLng: 'zh-CN',
+    lng: 'ja-JP',
+    fallbackLng: 'ja-JP',
     interpolation: {
       escapeValue: false
     }

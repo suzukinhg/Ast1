@@ -1,21 +1,29 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import Assessment from './components/Assessment';
-import QASection from './components/QASection';
-import Footer from './components/Footer';
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'motion/react';
-import { Sparkles, Brain, Heart } from 'lucide-react';
+import { Sparkles, Brain, Heart, Loader2 } from 'lucide-react';
 import Lenis from 'lenis';
 
-import AuthModal from './components/AuthModal';
-import GenderModal from './components/GenderModal';
-import ProductsPage from './components/ProductsPage';
-
-import ScientificSystem from './components/ScientificSystem';
-import UserProfile from './components/user/UserProfile';
 import { useFirebase } from './contexts/FirebaseContext';
 import { useTranslation } from 'react-i18next';
+
+const Assessment = lazy(() => import('./components/Assessment'));
+const QASection = lazy(() => import('./components/QASection'));
+const Footer = lazy(() => import('./components/Footer'));
+const AuthModal = lazy(() => import('./components/AuthModal'));
+const GenderModal = lazy(() => import('./components/GenderModal'));
+const ProductsPage = lazy(() => import('./components/ProductsPage'));
+const ScientificSystem = lazy(() => import('./components/ScientificSystem'));
+const UserProfile = lazy(() => import('./components/user/UserProfile'));
+const VipZone = lazy(() => import('./components/VipZone'));
+const OfflineQRGenerator = lazy(() => import('./components/OfflineQRGenerator'));
+
+const LoadingFallback = () => (
+  <div className="flex items-center justify-center min-h-[200px]">
+    <Loader2 className="w-8 h-8 animate-spin text-brand-primary" />
+  </div>
+);
 
 export function ParallaxImage({ src, alt }: { src: string, alt: string }) {
   const ref = useRef(null);
@@ -46,8 +54,17 @@ export function ParallaxImage({ src, alt }: { src: string, alt: string }) {
 export default function App() {
   const { t } = useTranslation();
   const { user } = useFirebase();
-  const [activeTab, setActiveTab] = useState<'public' | 'qa' | 'scientific' | 'user'>('public');
+  const [activeTab, setActiveTab] = useState<'public' | 'qa' | 'scientific' | 'user' | 'vip' | 'qr'>('public');
   const [showProducts, setShowProducts] = useState(false);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('vip') === '1') {
+      setActiveTab('vip');
+    } else if (params.get('qr') === '1') {
+      setActiveTab('qr');
+    }
+  }, []);
 
   useEffect(() => {
     if (!user && activeTab === 'user') {
@@ -289,7 +306,9 @@ export default function App() {
             {/* Assessment Section */}
             <section className="bg-transparent content-visibility-auto py-8">
               <div className="w-full">
-                <Assessment />
+                <Suspense fallback={<LoadingFallback />}>
+                  <Assessment />
+                </Suspense>
               </div>
             </section>
 
@@ -362,7 +381,9 @@ export default function App() {
             </section>
 
             <section>
-              <Footer />
+              <Suspense fallback={<LoadingFallback />}>
+                <Footer />
+              </Suspense>
             </section>
           </motion.main>
         ) : activeTab === 'qa' ? (
@@ -374,12 +395,14 @@ export default function App() {
             transition={{ duration: 0.5 }}
             className="min-h-screen overflow-y-auto"
           >
-            <section className="min-h-screen">
-              <QASection />
-            </section>
-            <section className="">
-              <Footer />
-            </section>
+            <Suspense fallback={<LoadingFallback />}>
+              <section className="min-h-screen">
+                <QASection />
+              </section>
+              <section className="">
+                <Footer />
+              </section>
+            </Suspense>
           </motion.div>
         ) : activeTab === 'scientific' ? (
           <motion.div
@@ -390,10 +413,12 @@ export default function App() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="min-h-screen overflow-y-auto"
           >
-             <ScientificSystem />
-             <Footer />
+            <Suspense fallback={<LoadingFallback />}>
+              <ScientificSystem />
+              <Footer />
+            </Suspense>
           </motion.div>
-        ) : (
+        ) : activeTab === 'user' ? (
           <motion.div
             key="user"
             initial={{ opacity: 0, scale: 0.98 }}
@@ -402,10 +427,26 @@ export default function App() {
             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             className="min-h-screen overflow-y-auto"
           >
-             <UserProfile />
-             <Footer />
+            <Suspense fallback={<LoadingFallback />}>
+              <UserProfile />
+              <Footer />
+            </Suspense>
           </motion.div>
-        )}
+        ) : activeTab === 'vip' ? (
+          <Suspense fallback={<LoadingFallback />} key="vip">
+            <VipZone onBack={() => { 
+              window.history.replaceState({}, '', window.location.pathname); 
+              setActiveTab('public'); 
+            }} />
+          </Suspense>
+        ) : activeTab === 'qr' ? (
+          <Suspense fallback={<LoadingFallback />} key="qr">
+            <OfflineQRGenerator onBack={() => {
+              window.history.replaceState({}, '', window.location.pathname); 
+              setActiveTab('public');
+            }} />
+          </Suspense>
+        ) : null}
       </AnimatePresence>
     </div>
   );
