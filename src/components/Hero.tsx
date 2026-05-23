@@ -27,7 +27,7 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
         className="absolute inset-0 z-0 gpu-accelerated overflow-hidden pointer-events-none will-change-transform"
       >
         <img 
-          src="https://images.unsplash.com/photo-1451187580459-434902bd0c0e?auto=format&fit=crop&q=80&w=2000&fm=webp" 
+          src="https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?auto=format&fit=crop&q=80&w=1600&fm=webp" 
           alt={t('hero.bg_alt')}
           className="w-full h-full object-cover opacity-60 mix-blend-screen scale-105"
           referrerPolicy="no-referrer"

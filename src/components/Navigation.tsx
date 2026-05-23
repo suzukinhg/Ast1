@@ -32,7 +32,6 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
   const [langOpen, setLangOpen] = useState(false);
   
   const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
-  const [flagIndex, setFlagIndex] = useState(0);
 
   const navItems = [
     { id: 'public', label: t('nav.philosophy'), en: t('nav.philosophy_sub') },
@@ -46,13 +45,8 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
     };
     window.addEventListener('scroll', handleScroll);
 
-    const flagInterval = setInterval(() => {
-      setFlagIndex((prev) => (prev + 1) % languages.length);
-    }, 2500);
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearInterval(flagInterval);
     };
   }, []);
 
@@ -113,42 +107,30 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
             ))}
           </div>
 
-          <div className="flex items-center gap-4 sm:gap-6 z-[110] shrink-0">
+          <div className="flex items-center gap-2 sm:gap-4 z-[110] shrink-0">
             {/* Language Selector */}
             <div className="relative">
               <button 
                 onClick={() => setLangOpen(!langOpen)}
                 onBlur={() => setTimeout(() => setLangOpen(false), 200)}
-                className="flex items-center gap-2 text-brand-ink/60 hover:text-brand-primary transition-colors py-2"
+                className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1.5 sm:py-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 hover:border-brand-primary hover:bg-brand-primary/10 transition-colors text-brand-ink/90"
               >
-                <div className="relative w-5 h-5 flex items-center justify-center overflow-hidden">
-                  <AnimatePresence mode="popLayout">
-                    <motion.span
-                      key={flagIndex}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute text-lg"
-                    >
-                      {languages[flagIndex].flag}
-                    </motion.span>
-                  </AnimatePresence>
+                <div className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-medium">
+                  <span className="text-sm sm:text-base">{currentLang.flag}</span>
+                  <span className="hidden sm:inline-block">{currentLang.label}</span>
+                  <span className="inline-block sm:hidden uppercase font-bold tracking-wider">{currentLang.code.split('-')[0]}</span>
                 </div>
-                <span className="text-sm font-medium hidden sm:block">
-                  {currentLang.label}
-                </span>
-                <ChevronDown size={14} className={`transition-transform duration-300 hidden sm:block ${langOpen ? 'rotate-180' : ''}`} />
+                <ChevronDown size={14} className={`transition-transform duration-300 opacity-60 ${langOpen ? 'rotate-180' : ''}`} />
               </button>
               
-                  <AnimatePresence>
+              <AnimatePresence>
                 {langOpen && (
                   <motion.div 
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 top-full mt-2 w-36 bg-brand-paper/90 backdrop-blur-2xl rounded-2xl shadow-2xl border border-white/5 overflow-hidden py-2"
+                    className="absolute right-0 top-full mt-2 w-40 sm:w-44 bg-brand-paper/95 backdrop-blur-2xl rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-brand-primary/10 overflow-hidden py-2"
                   >
                     {languages.map((lang) => (
                       <button
@@ -157,11 +139,11 @@ export default function Navigation({ activeTab, setActiveTab, openAuth }: Naviga
                           i18n.changeLanguage(lang.code).catch(console.error);
                           setLangOpen(false);
                         }}
-                        className={`w-full text-left px-4 py-2 text-xs transition-all flex items-center gap-2 hover:bg-brand-primary/5 hover:text-brand-primary ${
-                          i18n.language === lang.code ? 'bg-brand-primary/10 text-brand-primary font-medium' : 'text-brand-ink/60'
+                        className={`w-full text-left px-4 py-2.5 text-xs sm:text-sm transition-all flex items-center gap-3 hover:bg-brand-primary/5 hover:text-brand-primary ${
+                          i18n.language === lang.code ? 'bg-brand-primary/10 text-brand-primary font-bold' : 'text-brand-ink/70'
                         }`}
                       >
-                        <span className="text-sm">{lang.flag}</span>
+                        <span className="text-base sm:text-lg">{lang.flag}</span>
                         <span>{lang.label}</span>
                       </button>
                     ))}
