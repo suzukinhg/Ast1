@@ -66,10 +66,22 @@
       "peony": "Extrait de Pivoine"
     },
     "stats": [
-      { "label": "Équipe de Recherche", "sub": "Experts Mondiaux" },
-      { "label": "Taux de Pureté", "sub": "Qualité Pharmaceutique" },
-      { "label": "Utilisateurs", "sub": "Dans le monde entier" },
-      { "label": "Points de Contrôle", "sub": "Sécurité Rigoureuse" }
+      {
+        "label": "Équipe de Recherche",
+        "sub": "Experts Mondiaux"
+      },
+      {
+        "label": "Taux de Pureté",
+        "sub": "Qualité Pharmaceutique"
+      },
+      {
+        "label": "Utilisateurs",
+        "sub": "Dans le monde entier"
+      },
+      {
+        "label": "Points de Contrôle",
+        "sub": "Sécurité Rigoureuse"
+      }
     ]
   },
   "qa": {
@@ -223,5 +235,9 @@
     "reg_time": "Date d'inscription",
     "select_avatar": "Choisir l'Avatar",
     "updating_avatar": "Mise à jour de l'avatar..."
+  },
+  "partners": {
+    "title": "Partenaires Écologiques",
+    "desc": "Établir une intégration profonde avec les meilleures entreprises technologiques mondiales et les fournisseurs de modèles d'IA pour construire un écosystème intelligent sans faille."
   }
 }

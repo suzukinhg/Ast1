@@ -1,16 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+SC:wght@200;300;500&family=Cinzel:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", serif;
-  --font-brand: "Noto Serif SC", serif;
-  --font-brand-en: "Cinzel", serif;
+  --font-serif: "Space Grotesk", sans-serif;
+  --font-brand: "Space Grotesk", sans-serif;
+  --font-brand-en: "JetBrains Mono", monospace;
   
-  --color-brand-primary: #D4B475; /* 优雅流金 */
-  --color-brand-paper: #1A1A1C;   /* 雅致灰黑底板 */
-  --color-brand-ink: #FFFFFF;     /* 纯净晶白 */
-  --color-brand-accent: #C5A059;  /* 丝绸金 */
+  --color-brand-primary: #00F0FF; /* Neon Cyan */
+  --color-brand-paper: #05050A;   /* Deep Tech Dark */
+  --color-brand-ink: #E0E7FF;     /* Off-White Bright */
+  --color-brand-accent: #8A2BE2;  /* Neon Purple */
 }
 
 @layer base {
@@ -22,11 +22,11 @@
   }
 
   body {
-    @apply text-brand-ink font-sans antialiased selection:bg-brand-primary/20;
+    @apply text-brand-ink font-sans antialiased selection:bg-brand-primary/20 selection:text-brand-primary;
     background-color: var(--color-brand-paper);
     background-image: 
-      radial-gradient(at 0% 0%, rgba(197, 160, 89, 0.05) 0, transparent 50%),
-      radial-gradient(at 100% 100%, rgba(138, 109, 59, 0.03) 0, transparent 50%);
+      radial-gradient(at 0% 0%, rgba(0, 240, 255, 0.05) 0, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(138, 43, 226, 0.05) 0, transparent 50%);
     letter-spacing: -0.01em;
     overscroll-behavior-y: none;
     touch-action: manipulation;
@@ -34,30 +34,20 @@
     min-height: 100vh;
   }
 
-  .pattern-marble {
-    background-image: radial-gradient(circle at top right, rgba(197, 160, 89, 0.03), transparent 60%);
-  }
-
   .pattern-circuit {
-    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C5A059' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4v-4H4v4H0v2h4v4h2v-4h4v-2H6zM36 4v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  }
-
-  .pattern-dark-texture {
-    background-color: #0F0F11;
-    background-image: radial-gradient(circle at 2px 2px, rgba(197, 160, 89, 0.05) 1px, transparent 0);
-    background-size: 32px 32px, auto;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300F0FF' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4v-4H4v4H0v2h4v4h2v-4h4v-2H6zM36 4v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
 
   .pattern-dots {
-    background-image: radial-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 1px);
-    background-size: 40px 40px;
+    background-image: radial-gradient(rgba(0, 240, 255, 0.1) 1px, transparent 1px);
+    background-size: 30px 30px;
   }
 
   .pattern-tech-grid {
     background-image: 
-      linear-gradient(to right, rgba(197, 160, 89, 0.03) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(197, 160, 89, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
+      linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
   }
 
   .section-padding {
@@ -65,41 +55,40 @@
   }
 
   .image-container-modern {
-    @apply relative overflow-hidden rounded-[40px] shadow-2xl bg-brand-primary/5;
+    @apply relative overflow-hidden rounded-2xl shadow-[0_0_40px_rgba(0,240,255,0.1)] bg-brand-primary/5 border border-brand-primary/20;
   }
   
   h1, h2, h3, h4 {
-    @apply font-serif leading-[1.2];
-    letter-spacing: -0.01em;
+    @apply font-serif leading-[1.2] tracking-tight;
   }
 }
 
 @layer utilities {
   .text-luxury {
-    @apply font-serif italic text-brand-primary;
-    text-shadow: 0 0 20px rgba(197, 160, 89, 0.2);
+    @apply font-serif text-brand-primary font-bold tracking-tight;
+    text-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
   }
 
   .glass-card {
-    @apply bg-brand-ink/40 backdrop-blur-3xl border border-white/5 shadow-[0_32px_80px_-16px_rgba(0,0,0,0.4)] transition-all duration-700 relative overflow-hidden;
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_0_rgba(0,240,255,0.1)] transition-all duration-500 relative overflow-hidden;
   }
   
   .glass-card::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-transparent opacity-20 pointer-events-none;
+    @apply absolute inset-0 bg-gradient-to-br from-brand-primary/5 to-transparent pointer-events-none;
   }
 
   .brand-logo-text {
-    @apply font-brand font-extralight tracking-[0.45em] transition-all duration-1000 select-none;
-    text-shadow: 0 0 1px rgba(0,0,0,0.01);
+    @apply font-brand font-bold tracking-widest transition-all duration-500 select-none uppercase;
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
   }
 
   .brand-sub-text {
-    @apply font-brand-en font-light text-[7px] sm:text-[8px] uppercase tracking-[0.7em] transition-all duration-1000 opacity-25 select-none;
+    @apply font-brand-en text-[9px] uppercase tracking-[0.5em] transition-all duration-500 opacity-50 select-none text-brand-primary;
   }
   
   .premium-gradient {
-    background: radial-gradient(circle at top right, rgba(138, 141, 145, 0.15), transparent 70%);
+    background: radial-gradient(circle at top right, rgba(0, 240, 255, 0.15), transparent 70%);
   }
 
   .smooth-transition {
@@ -110,16 +99,9 @@
     content-visibility: auto;
     contain-intrinsic-size: 1px 500px;
   }
-
-  .text-reveal {
-    mask-image: linear-gradient(to right, black, black 50%, transparent 50%, transparent);
-    mask-size: 200% 100%;
-    animation: reveal 2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  }
-
-  @keyframes reveal {
-    from { mask-position: 100% 0; }
-    to { mask-position: 0% 0; }
+  @keyframes glow-pulse {
+    0%, 100% { opacity: 0.5; filter: blur(100px); }
+    50% { opacity: 0.8; filter: blur(140px); }
   }
 }
 
@@ -136,7 +118,7 @@
 }
 
 .PhoneInputInput {
-  @apply bg-transparent outline-none w-full text-sm font-medium;
+  @apply bg-transparent outline-none w-full text-sm font-medium text-white;
 }
 
 .PhoneInputCountry {

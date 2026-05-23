@@ -1,233 +1,249 @@
 {
   "nav": {
-    "philosophy": "品牌哲学",
-    "scientific": "科学系统",
-    "qa": "Q&A",
+    "philosophy": "核心愿景",
+    "scientific": "技术架构",
+    "qa": "服务内容",
     "logout": "退出",
-    "login": "尊享会员登录",
-    "philosophy_sub": "Philosophy",
-    "scientific_sub": "Scientific",
-    "qa_sub": "Consulting"
+    "login": "控制台登录",
+    "philosophy_sub": "Vision",
+    "scientific_sub": "Architecture",
+    "qa_sub": "Services"
   },
   "hero": {
-    "slogan_1": "内平衡的",
-    "slogan_2": "无声艺术",
-    "description": "这不只是生理的平衡，而是一场关于 <1>{{highlight}}</1> 的重构。",
-    "highlight": "魅力磁场与生命韵律",
-    "cta_products": "立即优享",
-    "cta_explore": "探索科学系统",
-    "scroll_explore": "Scroll to Explore Ritual",
-    "subtitle": "优雅仪式 · 2026",
-    "bg_alt": "健康背景"
+    "slogan_1": "智能跃迁",
+    "slogan_2": "重塑边界",
+    "description": "不仅仅是软件构建与GEO优化 这是由 <1>{{highlight}}</1> 驱动的业务变革。",
+    "highlight": "AI 生产力",
+    "cta_products": "探索解决方案",
+    "cta_explore": "了解技术栈",
+    "scroll_explore": "Scroll to Explore Architecture",
+    "subtitle": "AI-Driven Solutions · 2026",
+    "bg_alt": "科技背景"
   },
   "scientific": {
-    "marker": "科学方案 0.88",
-    "dossier": "研发档案",
-    "title_1": "内外",
-    "title_2": "共振的",
-    "title_3": "生命节律",
-    "desc": "极致配方是对自科学的最高敬畏。我们整合全球尖端生物资源，从每一毫升液体中编织出精准的生命律动蓝图。",
-    "spotlight": "成分亮点",
-    "qa_active": "质量保证启动",
-    "synergy": "互补协同",
-    "synergy_desc": "不仅在于单一补充，而是全方位协同。这些微量却关键的成分，成就机体平衡的最后一块拼图。",
-    "philosophy_quote": "“我们精研的不仅是营养方案，更是对机体的一种‘深度沟通’。”",
-    "philosophy_desc": "在Astcare，研发不只是实验数据的叠加。它是对身体自愈力的体现，是将每一种元素置于最正确的律动。",
-    "research": "全球协同",
-    "advanced": "生化实验室",
-    "traceable": "源头追溯",
-    "molecular_profile": "分子概况",
-    "fig": "图表.",
-    "purity": "纯度",
-    "bioavailability": "生物利用度",
-    "max": "最高",
-    "cat_hydration": "水润",
-    "cat_vitality": "活力",
-    "cat_defense": "防御",
-    "cat_balance": "平衡",
+    "marker": "系统架构 V2.0",
+    "dossier": "技术图谱",
+    "title_1": "Geo",
+    "title_2": "智能融合的",
+    "title_3": "算法网络",
+    "desc": "以专业软件工程为基底，深度集成顶尖 AI 大模型。我们通过精准的 Geo 空间优化和多模态 AI 接入，为企业部署具有未来感的技术壁垒。",
+    "spotlight": "核心技术引擎",
+    "qa_active": "系统监控已启动",
+    "synergy": "模型生态协同",
+    "synergy_desc": "并非单一模型调用，而是基于业务场景的混合路由。从 DeepSeek 的深度推理到 Gemini 的多模态感知，构筑系统级 AI 拼图。",
+    "philosophy_quote": "“软件开发不仅是编写代码，更是构建企业与未来的‘数字接口’。”",
+    "philosophy_desc": "在 Astcare，我们整合了从基础架构到应用层的完整技术栈，让每一次计算都在正确的业务律动上。",
+    "research": "分布式计算",
+    "advanced": "AI 实验室",
+    "traceable": "端到端加密",
+    "molecular_profile": "算力概况",
+    "fig": "架构.",
+    "purity": "可用性",
+    "bioavailability": "推理延迟",
+    "max": "极小",
+    "cat_hydration": "数据",
+    "cat_vitality": "算法",
+    "cat_defense": "安全",
+    "cat_balance": "边缘",
     "ingredients": [
       {
-        "name": "鱼胶原蛋白肽 & 三肽",
-        "desc": "双重分子量梯度渗透，深层修护结缔组织。我们采用专利酶解技术，从深海三文鱼中精萃优质蛋白，将大分子精确切割至吸收极限，重塑紧致肌理。"
+        "name": "Gemini & DeepSeek 深度继承",
+        "desc": "无缝对接 Google Gemini 系列多模态能力与 DeepSeek 卓越的逻辑推理能力。我们的接口中间件可根据负载动态调度，确保响应的精准与极致性能。"
       },
       {
-        "name": "白松露 & 白番茄",
-        "desc": "极地美白因子与森林钻石的邂逅。富含稀有氨基酸与类胡萝卜素，由内而外阻断自由基与黑色素，焕发无瑕通透质感。"
+        "name": "Geo 空间数据优化引擎",
+        "desc": "专为地理位置服务打造的优化层。百万级多边形计算、实时轨迹分析、LBS 定向推荐，全面提升应用的地理空间处理维度。"
       },
       {
-        "name": "PQQ & 酵母葡聚糖",
-        "desc": "细胞级修护枢纽。PQQ赋能线粒体再生，结合葡聚糖免疫激活系统，在机体内部构建坚固的抗衰老防御森林。"
+        "name": "Qwen & 豆包 本地化微调",
+        "desc": "基于阿里 Qwen 和字节豆包大模型，为企业提供私有化部署和垂直领域微调，确保高敏感数据的绝对安全同时，更懂中文业务语境。"
       }
     ],
     "others": {
-      "hyaluronic": "透明质酸钠",
-      "neuraminic": "N-乙酰神经氨酸",
-      "blood_orange": "血橙 & 葡萄籽",
-      "peony": "牡丹肽 & 玫瑰"
+      "hyaluronic": "Grok 实时数据",
+      "neuraminic": "向量数据库",
+      "blood_orange": "边缘计算节点",
+      "peony": "云原生微服务"
     },
     "stats": [
-      { "label": "Active Ingredients", "sub": "Synergistic Profile" },
-      { "label": "Extraction Rate", "sub": "Micron-level Tech" },
-      { "label": "Clinical Tests", "sub": "Participant Data" },
-      { "label": "Global Source", "sub": "Regional Origins" }
+      {
+        "label": "API Request",
+        "sub": "Concurrent Processing"
+      },
+      {
+        "label": "Model Routing",
+        "sub": "Millisecond Switch"
+      },
+      {
+        "label": "Geo Query",
+        "sub": "Spatial Optimization"
+      },
+      {
+        "label": "Data Security",
+        "sub": "Zero Trust"
+      }
     ]
   },
   "qa": {
-    "title_1": "Questions",
-    "title_2": "& Answers",
-    "cta_title": "仍有其他疑问？",
-    "cta_desc": "我们的私人健康顾问全天候在线，为您提供一对一的精准咨询服务。",
-    "cta_btn": "立即咨询顾问",
+    "title_1": "Tech",
+    "title_2": "& Services",
+    "cta_title": "准备好进行数字化转型了吗？",
+    "cta_desc": "我们的资深架构师和 AI 工程师全天候在线，为您评估并制定技术落地方案。",
+    "cta_btn": "预约技术咨询",
     "faqs": [
       {
-        "question": "什么是“Astcare”系列的核心理念？",
-        "answer": "我们不仅关注单一指数的突破，更致力于通过深海三文鱼胶原蛋白肽、PQQ等核心成分，调节机体内源性平衡，从细胞层面延缓生理衰老曲线。我们的目标是为您找回那种失落已久的、充满生命力的平衡态。"
+        "question": "Astcare 的核心业务是什么？",
+        "answer": "我们是专业的软件开发提供商，专注于将先进的人工智能（如 Gemini、DeepSeek、Qwen）与 Geo 空间数据优化深度结合，为企业定制具备高并发、高可用性的智能 SaaS 平台和应用系统。"
       },
       {
-        "question": "长期服用会有依赖性吗？",
-        "answer": "“Astcare”产品采用天然精萃成分，如白松露与专利酶解三肽。它们的设计初衷是修复与赋能机体自身系统，而非替代身体机能。我们坚持纯净配方，不含人工激素，让身体在自然的律动中重获新生。"
+        "question": "你们如何保证 AI 生成结果的准确性？",
+        "answer": "我们采用先进的 RAG（检索增强生成）技术和混合大模型路由策略。针对不同问题，系统会自动在 Grok（擅长实时数据）、DeepSeek（擅长代码和逻辑）及本地微调模型之间切换，并通过多重 Guardrails 机制保证输出的安全与精准。"
       },
       {
-        "question": "见效周期通常是多久？",
-        "answer": "根据万名真实用户的反馈，生理机能的微调通常在1-2个周期（约7-14天）显现。最初的表现往往是睡眠质量的改善与精力状态的平稳，随后是肌肤弹性和身体感知力的全方位修复。"
+        "question": "软件定制开发的周期通常是多久？",
+        "answer": "得益于我们的 AI 辅助开发流水线平台，标准企业级应用的交付周期已大幅缩短。基础系统通常在 2-4 周完成 MVP 交付，中大型包含 AI 智能体的复杂业务系统周期在 6-12 周不等。"
       },
       {
-        "question": "适合哪些人群服用？",
-        "answer": "适合追求卓越生活品质、处于职场高压期、渴望提升身体自然恢复能力、希望精准管理健康曲线的人群。特别是对于希望恢复精力与容貌状态的人士，它是理想的选择。"
+        "question": "什么是 Geo 优化，它对我的业务有何帮助？",
+        "answer": "Geo 优化是指对地理位置数据的存储、查询和分析进行底层加速。如果您的业务涉及本地生活、物流配送、跨区域数据看板或位置推荐，我们的 Geo 引擎可将高并发空间查询的延迟降低 80% 以上。"
       },
       {
-        "question": "产品成分是否可信？",
-        "answer": "所有成分均可溯源。我们选用的每一滴原料都经过严苛的实验室筛选，从深海精萃到极地植物活性因子，均通过国际公认的纯度测试，确保在为您提供高效营养的同时，维持极致的安全底线。"
+        "question": "我们公司的数据放在你们这里安全吗？",
+        "answer": "绝对安全。我们采用零信任架构，配合云原生私有 VPC 网络隔离。同时对于高敏感性业务，我们支持将 Qwen 或豆包等开源或授权模型在您的本地服务器进行私有化部署，确保数据不出域。"
       }
     ]
   },
   "footer": {
-    "follow_us": "关注我们",
+    "follow_us": "生态链接",
     "add_wechat": "添加企业微信",
-    "desc": "致力于通过科学的内分泌调理方案，让每一位客户找回属于自己的黄金状态，重塑个人魅力，构建和谐家庭生活。",
-    "contact_us": "联系我们",
+    "desc": "致力于用顶级的软件工程和 AI 大模型能力，构筑企业新一代的技术基座，推动各行业的智能化跃迁。",
+    "contact_us": "技术支持",
     "email": "Astcare@outlook.com",
-    "address_val": "珠海市横琴（粤港澳深度合作区）港澳大道868号市民服务中心2号楼政务服务中心114室-2936",
+    "address_val": "珠海市横琴（粤澳深度合作区）港澳大道868号市民服务中心2栋政务服务中心114号-2936",
     "privacy": "隐私政策",
-    "terms": "服务协议",
-    "all_rights_reserved": "© 2026 Cuilea. 版权所有。"
+    "terms": "开源协议",
+    "all_rights_reserved": "© 2026 Astcare Ltd. 保留所有权利。"
   },
   "products": {
-    "coming_soon": "Coming Soon",
-    "title": "产品系列即将上线",
-    "desc": "我们正在精心打磨全新的产品系列。精美的产品图与详细的设计页面正在筹备中，敬请期待。"
+    "coming_soon": "Deploying...",
+    "title": "SaaS 模块正在部署",
+    "desc": "我们正在微调下一代基于智能体的自动化工作流平台，敬请期待全新的交互体验。"
   },
   "auth": {
-    "login_title": "账号登陆",
-    "login_subtitle": "无需验证码，输入手机号即刻开启",
-    "google_login": "使用 Google 登陆",
-    "phone_login": "手机号便捷登陆",
-    "phone_label": "请选择国家/地区并输入号码",
-    "phone_placeholder": "输入手机号",
-    "submit": "立即进入",
-    "back": "返回其他方式",
-    "secure_note": "由系统加密保护，您的隐私安全无忧",
-    "error_login_failed": "登录失败",
-    "error_enter_phone": "请输入手机号",
-    "error_invalid_phone": "请输入正确位数的手机号码",
-    "error_reg_failed": "注册失败",
+    "login_title": "开发者终端控制台",
+    "login_subtitle": "安全通道已建立",
+    "google_login": "通过 Google 身份验证",
+    "phone_login": "手机令牌短信验证",
+    "phone_label": "请选择区域代码",
+    "phone_placeholder": "输入终端号码",
+    "submit": "初始化连接",
+    "back": "切换授权方式",
+    "secure_note": "AES-256 全链路加密，保障终端数据安全",
+    "error_login_failed": "身份验证失败",
+    "error_enter_phone": "需要终端号码",
+    "error_invalid_phone": "终端号码格式异常",
+    "error_reg_failed": "分配节点失败",
     "error_enable_email": "请先在 Firebase 控制台启用 Email/Password 登录方式",
-    "error_method_disabled": "登录方式未开启：请在 Firebase 控制台启用 Email/Password",
-    "error_system_busy": "系统繁忙: 请检查网络"
+    "error_method_disabled": "网关受阻：不支持的认证协议",
+    "error_system_busy": "云服务繁忙: 请检查网络节点"
   },
   "gender": {
-    "thanks": "感谢登录",
-    "desc": "为了给您提供更精确的定制方案，请选择您的性别。该信息将加密存储。",
-    "male": "男士",
-    "female": "女士"
+    "thanks": "授权成功",
+    "desc": "请选择您的开发阵营以分配初始权限，该数据将被加密写入区块链。",
+    "male": "前沿算法工程师",
+    "female": "全栈架构系统师"
   },
   "app": {
-    "core_methodology": "Core Methodology / 001",
-    "balance_beauty": "平衡之美",
-    "percieve_life": "源于对生命的精准感知",
-    "not_just_product": "不仅是产品",
-    "but_evolution": "更是生命质感的进化",
-    "wellness_desc": "在健康领域，我们深知单一的症状改善只是权宜之计。Astcare通过全球前沿科研成果，精准对冲生理下降曲线，为追求极限体验与长效优雅的您，提供高能营养支持。",
-    "expert_team": "科研专家团队",
-    "global_users": "全球真实用户",
-    "customer_satisfaction": "客户满意度"
+    "core_methodology": "System Core / v1.0",
+    "balance_beauty": "算法之美",
+    "percieve_life": "源于对数据的精准解析",
+    "not_just_product": "不仅是软件",
+    "but_evolution": "更是业务模式的进化",
+    "wellness_desc": "在数字化时代，我们深知传统的代码堆砌已无法满足增长需求。Astcare 通过整合全球开源与闭源前沿 AI 模型，结合极速地理计算优化，为您提供高维度的数字业务支持。",
+    "expert_team": "全栈开发极客",
+    "global_users": "企业级部署",
+    "customer_satisfaction": "SLA 达标率"
   },
   "methodologies": {
     "brain": {
-      "title": "大脑的情绪锚点",
-      "desc": "营养水平直接影响大脑神经元，调节情绪波动。一个平衡的状态，是您温柔且坚韧的力量源泉。"
+      "title": "大模型路由中枢",
+      "desc": "通过自研中间件网关，毫秒级分发推理请求至 DeepSeek、Gemini 或本地 Qwen。让每个 Prompt 都能找到最具性价比的算力归宿。"
     },
     "beauty": {
-      "title": "容颜的无形装饰",
-      "desc": "胶原蛋白的流失与岁月流转密切相关。科学调理，让您的肌肤重现通透感，由内而外散发自信磁场。"
+      "title": "云原生弹性架构",
+      "desc": "采用 Kubernetes 容器编排与 Serverless 结合，支持亿级并发。系统的稳定性与高可用，是业务自信扩展的底气。"
     },
     "harmony": {
-      "title": "亲密关系的化学键",
-      "desc": "和谐健康的关系需要身体的响应。自然调节内分泌与激素状态，唤醒身体感知力，让爱意重新在流动的韵律中升温。"
+      "title": "Geo 空间地理引擎",
+      "desc": "采用自定义的分布式空间索引用法，完美契合打车、外卖、交友等高频 LBS 业务场景。位置计算，快如闪电。"
     }
   },
   "assessment": {
-    "title_sub": "Wellness Assessment / 生理平衡自测",
-    "title": "精准节律定位",
-    "desc": "通过科学的维度分析，探索您的生理节律状态，获取个性化的平衡与魅力方案。",
+    "title_sub": "Tech Diagnosis / 架构健康度诊断",
+    "title": "精准技术定位",
+    "desc": "通过全面的技术栈扫描，评估您企业目前的数字化阶段，获取个性化的 AI 升级计划。",
     "step": "Step",
     "of": "of",
-    "analysis": "Biological Rhythm Analysis",
-    "yes_label": "是的，时常如此",
-    "yes_sub": "Presence Detected",
-    "no_label": "不，目前还好",
-    "no_sub": "Balanced Rhythm",
-    "report_generated": "评估报告已生成",
-    "your_status": "您的现状",
-    "ideal_range": "理想区间",
-    "overall_index": "综合平衡指数",
-    "login_save": "登录后即可永久保存您的评测记录",
-    "get_whitepaper": "免费领取调理白皮书",
-    "get_consultation": "获取专家咨询方案",
-    "processing": "正在处理计算结果...",
+    "analysis": "System Metric Analysis",
+    "yes_label": "确认具备此特征",
+    "yes_sub": "Feature Detected",
+    "no_label": "暂未涉及",
+    "no_sub": "Feature Skipped",
+    "report_generated": "技术雷达已生成",
+    "your_status": "当前系统状态",
+    "ideal_range": "建议演进方向",
+    "overall_index": "AI 融入度指数",
+    "login_save": "授权访问以获取详细系统升级白皮书",
+    "get_whitepaper": "查看架构改良方案",
+    "get_consultation": "获取高级工程师对接",
+    "processing": "正在并行计算评估结果...",
     "questions": [
-      "是否感到精力下降，午后容易疲惫？",
-      "皮肤是否出现暗沉、色斑或者难以修护的细纹？",
-      "情绪波动是否变大，容易焦虑或低落？",
-      "与伴侣的互动亲密度是否有所下降？",
-      "睡眠质量是否变差，难以进入深度睡眠？",
-      "脑力活动后是否感觉反应迟钝，思维不如以往敏捷？",
-      "身体是否存在局部浮肿，或体重受饮食波动影响极大？",
-      "是否经常感到心烦意乱，难以专注完成手头工作？",
-      "身体的感受力是否变得迟钝，对触碰和温存的反应减弱？",
-      "醒后是否感到浑身沉重，仿佛没有得到真正的休息？"
+      "系统是否频繁出现高并发下的请求超时或响应缓慢？",
+      "核心业务流是否仍大量依赖人工审核或数据录入？",
+      "地理位置查询（如附近的人/地点）是否在用户量增加时显著变卡？",
+      "应用目前是否嵌入了基于 LLM（大语言模型）的智能交互或总结功能？",
+      "用户数据与分析是否仍割裂在多个系统，缺乏统一的向量知识库？",
+      "代码库的日常迭代和测试中，是否已引入 AI 辅助编程工具链？",
+      "系统是否有能力根据用户行为和画像进行准确且实时的个性化推荐？",
+      "当前的 IT 运维是否能实现异常自动报警并自动给出代码层修复建议？",
+      "业务出海或跨区域扩张时，是否遇到严重的数据延迟与网络瓶颈？",
+      "开发团队是否觉得难以快速落地最新的开源大语言模型能力？"
     ],
     "dimensions": [
-      "精力活力",
-      "代谢节奏",
-      "情绪控制",
-      "亲密和谐",
-      "睡眠质量"
+      "云原生架构",
+      "LLM 渗透率",
+      "空间计算",
+      "自动化流",
+      "数据价值"
     ],
     "feedbacks": {
-      "high": "您的生理平衡状态极佳，体内的自然节奏正处于高效且和谐的运转中。继续保持现有的生活方式，这为您持久的魅力奠定了坚实的基础。",
-      "medium_high": "您的生理状态目前总体稳定，但局部可能受外界环境或近期压力影响，出现了细微的波动信号。通过科学的节律调整与精准的营养补充，您可以轻松地让平衡感再次回归顶峰。",
-      "medium": "目前的评估显示，您的身体系统正通过微弱的信号提醒您关注内部节律。这并非意味着健康隐患，而是提示您需要关注激素水平与情绪节奏的科学协同，专业的温和干预将显著提升您的生活质感。",
-      "low": "检测到您的生理状态正面临一定的平衡挑战，这可能已经细微地反映在您的日常活力与外观表现。建议从荷尔蒙平衡的角度进行科学审视，通过分阶段的精准调序，帮助身体找回原本的和谐韵律。"
+      "high": "您的系统架构处于行业领先水平。云原生生态成熟且已初具 AI 驱动模式。接下来可以探索更深层级的多智能体（Multi-Agent）业务自我闭环。",
+      "medium_high": "您的系统十分稳健，业务流基本实现自动化，但在 AI 大模型的深度整合以及特定查询（如 Geo）上仍有明显优化空间。引入专门的模型路由和专用检索引擎将是极好的投资。",
+      "medium": "目前的评估显示，您的技术栈主要停留在传统的 CRUD 阶段。系统亟需通过重构打破信息孤岛，并引入如 RAG 技术增强检索与对话能力，提高系统的“智商”。",
+      "low": "检测到您的系统正面临严重的技术债务，性能和扩展性已成为业务瓶颈。建议立即开启整体云原生重构计划，以全新的微服务架构并先天引入大模型接口来重塑业务流。"
     }
   },
   "user": {
-    "please_login": "请先登录",
-    "unbound": "未绑定",
-    "premium_member": "尊享会员",
-    "diamond_member": "钻石会员",
-    "basic_info": "个人基本信息",
-    "manage_profile": "管理您的身份资料",
-    "nickname": "显示昵称",
-    "contact": "绑定联系方式 (邮箱/手机号)",
-    "reg_time": "注册时间",
-    "select_avatar": "选择头像",
-    "updating_avatar": "正在更新头像..."
+    "please_login": "需要终端授权",
+    "unbound": "未分配",
+    "premium_member": "高级工程师",
+    "diamond_member": "系统架构师",
+    "basic_info": "开发者档案",
+    "manage_profile": "配置权限与身份标识",
+    "nickname": "网关代号",
+    "contact": "绑定私钥/联系协议",
+    "reg_time": "初始化时间",
+    "select_avatar": "配置全息投影",
+    "updating_avatar": "通信同步中..."
   },
   "vip": {
-    "title": "该产品通过溯源",
-    "subtitle": "Authenticity Verified",
-    "desc": "恭喜，您查询的Astcare产品已通过官方正品溯源认证。每一份精心萃取的成分均可追溯，确保为您提供纯净、安全、极致焕活的健康体验。",
-    "verified": "官方正品认证"
+    "title": "特权访问校验通过",
+    "subtitle": "Signature Verified",
+    "desc": "系统内核验证成功：您正在查看受限区域的内部软件工程设计规范，该通道由企业级专属加密保护。感谢您选择 Astcare。",
+    "verified": "SSH Key 验证通过"
+  },
+  "partners": {
+    "title": "生态合作伙伴",
+    "desc": "与全球顶尖的科技企业与AI模型提供商建立深度融合，构建无缝衔接的智能生态。"
   }
 }

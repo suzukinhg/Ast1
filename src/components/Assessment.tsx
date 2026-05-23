@@ -206,21 +206,21 @@ export default function Assessment() {
                   >
                     <ResponsiveContainer width="100%" height="100%">
                       <RadarChart cx="50%" cy="50%" outerRadius="70%" data={chartData}>
-                        <PolarGrid stroke="#e5e7eb" />
-                        <PolarAngleAxis dataKey="subject" tick={{ fill: '#1C1C1E', fontSize: 10, fontWeight: 500 }} />
+                        <PolarGrid stroke="#E0E7FF" strokeOpacity={0.1} />
+                        <PolarAngleAxis dataKey="subject" tick={{ fill: '#00F0FF', fontSize: 10, fontWeight: 500 }} />
                         <Radar
                           name={t('assessment.your_status')}
                           dataKey="A"
-                          stroke="#8A8D91"
-                          fill="#8A8D91"
+                          stroke="#00F0FF"
+                          fill="#00F0FF"
                           fillOpacity={0.6}
                         />
                         <Radar
                           name={t('assessment.ideal_range')}
                           dataKey="B"
-                          stroke="#1C1C1E"
-                          fill="#1C1C1E"
-                          fillOpacity={0.05}
+                          stroke="#8A2BE2"
+                          fill="#8A2BE2"
+                          fillOpacity={0.2}
                         />
                         <Tooltip 
                           contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 10px 30px -5px rgb(0 0 0 / 0.1)', padding: '10px', fontSize: '12px' }}

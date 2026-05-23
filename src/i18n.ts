@@ -7,6 +7,7 @@ import en from './locales/en.json';
 import ja from './locales/ja.json';
 import fr from './locales/fr.json';
 import ko from './locales/ko.json';
+import pt from './locales/pt.json';
 
 i18n
   .use(LanguageDetector)
@@ -17,10 +18,11 @@ i18n
       'en-US': { translation: en },
       'ja-JP': { translation: ja },
       'fr-FR': { translation: fr },
-      'ko-KR': { translation: ko }
+      'ko-KR': { translation: ko },
+      'pt-BR': { translation: pt }
     },
-    lng: 'ja-JP',
-    fallbackLng: 'ja-JP',
+    lng: 'en-US',
+    fallbackLng: 'en-US',
     interpolation: {
       escapeValue: false
     }

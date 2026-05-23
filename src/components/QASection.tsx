@@ -6,24 +6,24 @@ import Skeleton from './ui/Skeleton';
 
 const faqStaticData = [
   {
-    icon: <Sparkles className="size-6" />,
-    image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800"
+    icon: <Sparkles className="size-6 text-brand-primary" />,
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <ShieldCheck className="size-6" />,
-    image: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?auto=format&fit=crop&q=80&w=800"
+    icon: <ShieldCheck className="size-6 text-brand-primary" />,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Clock className="size-6" />,
-    image: "https://images.unsplash.com/photo-1495364141860-b0d03eccd065?auto=format&fit=crop&q=80&w=800"
+    icon: <Clock className="size-6 text-brand-primary" />,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <UserCheck className="size-6" />,
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+    icon: <UserCheck className="size-6 text-brand-primary" />,
+    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
   },
   {
-    icon: <Zap className="size-6" />,
-    image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=800"
+    icon: <Zap className="size-6 text-brand-primary" />,
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
   }
 ];
 

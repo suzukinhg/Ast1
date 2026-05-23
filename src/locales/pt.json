@@ -1,0 +1,249 @@
+{
+  "nav": {
+    "philosophy": "Visão",
+    "scientific": "Arquitetura",
+    "qa": "Serviços",
+    "logout": "Sair",
+    "login": "Login no Console",
+    "philosophy_sub": "Núcleo",
+    "scientific_sub": "Tech",
+    "qa_sub": "FAQ"
+  },
+  "hero": {
+    "slogan_1": "Evolução",
+    "slogan_2": "Inteligente",
+    "description": "Mais do que apenas construção de software e otimização GEO, esta é uma transformação de negócios impulsionada pela <1>{{highlight}}</1>.",
+    "highlight": "produtividade da IA",
+    "cta_products": "Explorar Soluções",
+    "cta_explore": "Ver Stack Tecnológico",
+    "scroll_explore": "Role para Explorar a Arquitetura",
+    "subtitle": "Soluções Impulsionadas por IA · 2026",
+    "bg_alt": "Fundo Sci-Fi"
+  },
+  "scientific": {
+    "marker": "Arq de Sist V2.0",
+    "dossier": "Matriz Tecnológica",
+    "title_1": "Geo",
+    "title_2": "Integrada",
+    "title_3": "Rede Neural",
+    "desc": "Construído em engenharia de software profissional, profundamente integrado com modelos de IA de primeira linha. Desenvolvemos barreiras tecnológicas futuristas para empresas através de otimização espacial Geo precisa e acesso a IA multimodal.",
+    "spotlight": "Motor Tecnológico Central",
+    "qa_active": "Monitor de Sistema Ativo",
+    "synergy": "Sinergia de Modelos",
+    "synergy_desc": "Não apenas chamadas de API de modelo único, mas roteamento dinâmico baseado em cenários. Desde a lógica do DeepSeek ao sensoriamento multimodal do Gemini, construindo um quebra-cabeça de IA no nível do sistema.",
+    "philosophy_quote": "\"O desenvolvimento de software não é apenas escrever código; é construir a 'interface digital' entre o negócio e o futuro.\"",
+    "philosophy_desc": "Na Astcare, consolidamos toda a stack tecnológica da infraestrutura até a camada de apresentação, garantindo que cada ciclo computacional corresponda ao ritmo do seu negócio.",
+    "research": "Distribuído",
+    "advanced": "Laboratórios de IA",
+    "traceable": "Criptografia E2E",
+    "molecular_profile": "Perfil de Computação",
+    "fig": "Arq.",
+    "purity": "Uptime",
+    "bioavailability": "Latência",
+    "max": "Máx",
+    "cat_hydration": "Dados",
+    "cat_vitality": "Algoritmo",
+    "cat_defense": "Segurança",
+    "cat_balance": "Edge",
+    "ingredients": [
+      {
+        "name": "Integração Gemini e DeepSeek",
+        "desc": "Acoplamento perfeito com o processamento multimodal Gemini do Google e os recursos de raciocínio profundo do DeepSeek. Nosso middleware roteia dinamicamente cargas de trabalho para garantir desempenho extremo."
+      },
+      {
+        "name": "Motor de Dados Espaciais Geo",
+        "desc": "Uma camada de otimização forjada especificamente para LBS. Computação de polígonos na escala de milhões, análises espaciais em tempo real e sugestões alvo de localização."
+      },
+      {
+        "name": "Ajuste Fino Local Qwen e Doubao",
+        "desc": "Com base em pesos de código aberto de Qwen e Doubao, oferecemos implantações privadas garantindo que os dados confidenciais de sua empresa nunca saiam do seu VPC."
+      }
+    ],
+    "others": {
+      "hyaluronic": "Grok Dados em Tempo Real",
+      "neuraminic": "Bancos de Dados Vetoriais",
+      "blood_orange": "Nós de Computação Edge",
+      "peony": "Microsserviços Nativos da Nuvem"
+    },
+    "stats": [
+      {
+        "label": "API Request",
+        "sub": "Processamento Simultâneo"
+      },
+      {
+        "label": "Model Routing",
+        "sub": "Troca de Milissegundo"
+      },
+      {
+        "label": "Geo Query",
+        "sub": "Otimização Espacial"
+      },
+      {
+        "label": "Data Security",
+        "sub": "Zero Trust"
+      }
+    ]
+  },
+  "qa": {
+    "title_1": "Tech",
+    "title_2": "& Serviços",
+    "cta_title": "Pronto para a Transformação Digital?",
+    "cta_desc": "Nossos arquitetos sêniores e engenheiros de IA estão online 24/7 para avaliar e projetar seu roteiro tecnológico.",
+    "cta_btn": "Agendar Consulta",
+    "faqs": [
+      {
+        "question": "Qual é o negócio central da Astcare?",
+        "answer": "Somos provedores profissionais de desenvolvimento de software focados em combinar IA avançada (Gemini, DeepSeek, Qwen) com otimização espacial Geo para entregar plataformas SaaS inteligentes e de alta simultaneidade."
+      },
+      {
+        "question": "Como garantem a precisão dos resultados da IA?",
+        "answer": "Utilizamos fluxos de RAG avançados e roteamento híbrido de LLMs. O sistema alterna automaticamente entre o Grok (dados em tempo real), DeepSeek (lógica) e modelos localizados, sob mecanismos rígidos de segurança."
+      },
+      {
+        "question": "Qual é o cronograma de desenvolvimento típico?",
+        "answer": "Graças às nossas plataformas CI/CD assistidas por IA, os prazos foram drasticamente cortados. MVPs geralmente levam de 2-4 semanas, e os sistemas avançados baseados em agentes levam de 6-12 semanas."
+      },
+      {
+        "question": "O que é Otimização Geo?",
+        "answer": "É a aceleração profunda da camada base no processamento e armazenamento de dados espaciais. Ela reduz drasticamente a latência dos dashboards de dados em até 80%."
+      },
+      {
+        "question": "Os nossos dados da empresa são seguros convosco?",
+        "answer": "Abolutamente, nós utilizamos as arquiteturas de modelo zero-trust e também sistemas com configurações personalizadas."
+      }
+    ]
+  },
+  "footer": {
+    "follow_us": "Ecossistema",
+    "add_wechat": "Chat Empresarial",
+    "desc": "Dedicados ao uso de engenharia de software tier-1 e as maiores vantagens em IA corporativa para estruturar a principal base de infra-estrutura futura.",
+    "contact_us": "Suporte",
+    "email": "Astcare@outlook.com",
+    "address_val": "Room 114-2936, Govt Service Center, Bldg 2, Civic Service Center, 868 Gang'ao Ave, Hengqin, Zhuhai",
+    "privacy": "Política de Privacidade",
+    "terms": "Termos de Uso Open Source",
+    "all_rights_reserved": "© 2026 Astcare Ltd. Todos os direitos reservados."
+  },
+  "products": {
+    "coming_soon": "Sendo efetuado o deploy...",
+    "title": "Módulos de SaaS no qual efetuam o Deploy",
+    "desc": "Nós estamos desenvolvendo as melhorias da Plataforma Automatizada de fluxogramas com agentes de inteligência artificial de um modo a continuar oferecendo grandes melhorias. Continue esperando!"
+  },
+  "auth": {
+    "login_title": "Console de Terminais do Desenvolvedor",
+    "login_subtitle": "A segurança da conexão estabelecida.",
+    "google_login": "Efetuar Autenticação na Google",
+    "phone_login": "Efetuando as checagens com códigos Token",
+    "phone_label": "Selecionando o Código Nacional e a Região",
+    "phone_placeholder": "Digite o numero do Terminal e Identificador do Dispositivo (ID)",
+    "submit": "Dando início as Conexões e Dispositivos...",
+    "back": "Mudar para a Verificação Completa e Segura",
+    "secure_note": "A Criptografia avançada em relação com os terminais (AES-256 E2E) também irá proteger os aparelhos ao conectar e durante sua comunicação via sistemas.",
+    "error_login_failed": "Autenticação Falhou",
+    "error_enter_phone": "O identificador da central/celular está errado.",
+    "error_invalid_phone": "Este número de contato para autorizar um novo dispositivo que seja identificado pode resultar com informações duvidosas/falhas, efetue um processo corretamente formatação correta de celular/token/região/dispositivo",
+    "error_reg_failed": "A liberação dos protocolos resultou com mensagens em erro, isto acontece muito ao carregar a conexão ou falta internet",
+    "error_enable_email": "Configure suas contas do modo seguro utilizando o banco Firebase com conexões adequadas e e-mail e as credenciais",
+    "error_method_disabled": "Gateway com proteção negada em modo bloqueio...",
+    "error_system_busy": "Tempo limite expirou, servidores ou provedor encontram em alta de serviços ocupados ou lotação. Voltar ao contato com um agente/sistema em momento seguinte."
+  },
+  "gender": {
+    "thanks": "Sistemas de acesso autenticados com as proteções estabelecidas",
+    "desc": "Preencha suas capacidades em modo dev na distribuição inicial dos níveis.",
+    "male": "Engenheiro(a) dos Processos por Algoritmos",
+    "female": "Um Líder Técnico / Especialista com Múltiplas Posições de Capacidade e Sistemas."
+  },
+  "app": {
+    "core_methodology": "Sistema de Lógica Núcleo / Modelo v1.0",
+    "balance_beauty": "Bela de Agilidade pela Análise...",
+    "percieve_life": "Em suas bases, compreensões nativas na verificação de arquivos/banco...",
+    "not_just_product": "Nunca mais limitados apenas para softwares.",
+    "but_evolution": "Na própria evolução nativa corporativa dentro em inovações",
+    "wellness_desc": "Programação de nível rotineiro do sistema para atender escalonamentos, isso nos impulsionou nos caminhos revolucionário junto ao desempenho otimista das Inteligências em todos métodos no processamento dinâmico entre cálculos com bases corporativas dimensionais da próxima categoria.",
+    "expert_team": "Equipe Prática Técnica - Full-Stack Avançada (Especialistas)",
+    "global_users": "Projeções Profissional pelo Sistema e suas Funcionalidades / Serviços das Organizações Empresarias",
+    "customer_satisfaction": "Os compromissos de acordos (SLAs / Tempos online) Garantidos"
+  },
+  "methodologies": {
+    "brain": {
+      "title": "Pontos focais ou HUB com Roteamento por Redes do Modelo Múltiplos.",
+      "desc": "As chamadas personalizadas de gateway executam processamento nos cálculos a cada milissegundos nas tecnologias inovadoras como ferramentas (ex. Gemini). O desempenho garante excelência tecnológica aliada nas proezas digitais de inovações."
+    },
+    "beauty": {
+      "title": "Arquitetura com Recursos base de Nativo na Computação e Servidores Nas Nuvens",
+      "desc": "Infraestruturas Kubernetes no processo integrado no formato nativo/escalável, além disso com suporte em todos métodos via microsserviço sem-servidor."
+    },
+    "harmony": {
+      "title": "Os Motores da Geografia Computacionais do Espaço, Geo Engine e Recursos Geográficos com cálculos Avançados (Distribuições Inovação).",
+      "desc": "Utilizando inovações corporativas geográficas distribuída no cálculo, proporcionaremos cenários práticos por meios avançados as categorias da Logística até mobilidade inteligente. Executados sob desempenho."
+    }
+  },
+  "assessment": {
+    "title_sub": "Os diagnósticos dos cenários integrados Técnicos na arquitetura de suas operações de programação.",
+    "title": "Testes Corporativos para Análises da Atual Condição a Infraestrutura por meios em Métricas e Avaliações.",
+    "desc": "Aproveite esta avaliação exclusiva do conhecimento. Tenha clareza as camadas internas dos componentes digitais.",
+    "step": "Ações e Fases:",
+    "of": "no qual de:",
+    "analysis": "Ferramentas que promovem visibilidade por Análises a Métricas Digitais Corporativas Sistêmicas do seu Negócio Atual.",
+    "yes_label": "Habilidade / Funções Configurada Integradas para Uso Empresárial Detectadas no Ambiente...",
+    "yes_sub": "Ativado",
+    "no_label": "As capacidades/funcionalidades mencionadas durante o check-out podem apresentar indisponibilidades das integrações originais ignoradas",
+    "no_sub": "Falsa/Descartada",
+    "report_generated": "O seu Relatório ou Mapa Digital Inteligente por Análise Gerado de Forma Exclusiva e Automático.",
+    "your_status": "Mapeamento em Níveis",
+    "ideal_range": "Avaliação Inicial Corporativo para Projeções de Evolução a Novos Meios / Alvos (Ideal/Teto)",
+    "overall_index": "Níveis e Taxas Exclusivos Sobre o Escalonamentos/Mapeamentos na Inteligências Aplicadas a Sua Atual Situação de Programações Inovadora do IA e Outros Recursos Digitais.",
+    "login_save": "Registre-se aos canais da verificação. É altamente indicado registrar, após isso poderá validar as oportunidades nas novas ferramentas ao ver, bem como manter este papel consultivo para as arquiteturas propostas a inovação e o crescimento / oportunidades corporativas visadas.",
+    "get_whitepaper": "Ao Consultar o Mapa Inteligente Inicial de Orientação Analise de Projetos das Novas Rotas com Implementações dos Mecanismos Técnicos",
+    "get_consultation": "Ter os Encontros Conectados (Profissionalmente)",
+    "processing": "Atualmente ocorrem verificações nas múltiplas avaliações paralelizadas ao seus atuais testes. Um pequeno período ao tempo aguardar...",
+    "questions": [
+      "Frequentemente as rotinas de processos sistêmicos ao estar sendo gerados / processados em múltiplas escalas demonstram sinais na qual com problemas frequente do sistemas com alta espera na finalização das chamadas com requisições por gargalo nas configurações locais originais / conectividade e latência?",
+      "O gerenciamento de equipes necessitam estarem constantemente presos e atados as formas manuais com processos em aprovações dos trabalhos durante checagens nas formas/tarefas primárias de sua Empresa?",
+      "Operações ligadas pela Geologia e aos Endereçamentos de locais de sistemas nativos ou usuários/pessoas enfrentaram graves problemas sobre os crescimentos da capacidade/armazenamento do banco? Apresentaram dificuldades frequente em processos lentos as altas e rápidas gerações do carregamentos aos métodos em uso durante os grandes acessos?",
+      "No escopo ou interfaces aos aplicativos do usuário implementados em desenvolvimento na original forma incorporaram a grande ajuda e capacidades interligadas usando Inteligências ou outras inovações/Agentes capazes nos Resumos rápidos a relatórios entre as interfaces e capacidades que a máquina/produto possa aprender no formato textual com IA interativo?",
+      "As informações sigilosas aos relatórios podem indicar desconexões e estarem separados fragmentadas ou sem conexão em ferramentas distintas como plataformas sem que eles compartilhassem/gerenciasse todos arquivos através dos formatos centrais corporativos em repositório seguro no vetor por inteligência?",
+      "Nas tarefas ligadas em Integração dos Ambientes do sistema e desenvolvimento as equipes (Profissionais de Códigos) possuir formas exclusivas por programação assistidas e baseadas pela (Inteligência das Máquinas Interligadas) sobre todo método operatório desde os meios no processo aos testes integrados / distribuição e CI/CD para seu projeto profissional das Empresas Atuais?",
+      "Garantem se uma funcionalidade corporativa nativa dos cenários personalizados aos perfis possam obter análises inteligentes no qual possam gerar as sugestões e ou até recomendações reais nos atuais cenários dos clientes nos métodos de Tempo-Real sob exata exclusividade em alta taxa correta no acesso as previsões operatórias/dinâmicas?",
+      "Na estrutura aos módulos ligados à automação de controle/suporte ou operações da sua tecnologia/nuvens ter acesso contínuos com relatórios sob atividades e monitoridades dos processos sobre possíveis gargalos/vulnerabilidades e bugs além disso gerando possíveis instruções automáticas dos algoritmos via IA em seu próprio ecossistema original visando resoluções de códigos automáticas (Soluções de correções) aos projetos envolvidos nestes desenvolvimentos na sua infraestrutura corporativa centralizada?",
+      "As suas expansões externas entre redes corporativas conectada enfrentaram graves gargalos com paralisações globais das velocidades com relação ao fluxo em transmissão ao compartilhar dados das origens ou outras empresas (em cruzamento sob fronteiras)?",
+      "Seria possível nas integrações técnicas originais da atual forma e time corporativo das áreas do modelo / tecnologia estarem apresentando gargalos críticos (com imensas burocracias das etapas de implementação e dificuldades para a adoção em integrações de inovações nativa da IA)? Consideram as tarefas altamente longas nas metodologias recentes e os últimos e revolucionários processadores textuais dos Agente e Códigos-Abertos do mundo e mercado visando escalar de modo complexos o sistema atual das organizações com uma forte segurança empresarial integrada?"
+    ],
+    "dimensions": [
+      "Operação com Sistemas de Infraestrutura Arquitetura Cloud (Com Múltiplos Escalamentos aos Computadores e Micro-Nuvens da Rede em Nativo)",
+      "Proporções Sistêmicos a Inteligências (Capacidade do Motor e Agente sobre o Fluxogramas LLMs Profundos entre as Conexões Interligadas no Código Atual de Inteligências Corporativo - Integração do AI aos Trabalhos Profissionais).",
+      "Modelos por Processo Operatório e Análise Geo-Espacial Inteligente as Múltiplas Conexões / Lógicas entre Dispositivos Móvel.",
+      "Sistema que Automa Fluxogramas e Agilizam Operações (Métodos de Gestões Processos Manuais para Plataformas / Infraestrutura a IA)",
+      "Análise ao Vetor Dinâmicos Operacional de Tráfegos sobre Velocidades e Transferência das Comunicação de Nuvem (E Dados aos Cálculos Inovadores)"
+    ],
+    "feedbacks": {
+      "high": "Todas implementações dos meios as camadas de infra-estruturas são um excelente modelo (Excepcional / Profisionalismo). Há a adoção da Inteligências ao desenvolvimento interligadas sobre redes as operações / processos Nativos por Serves com nuvem que geram as suas expansões operatórias ao ambiente (Modelos Múltiplos Avançado em Fluxograma por IA em Equipes).",
+      "medium_high": "Com sólidas estratégias operativas sobre cenários altamente estruturadas mas apresenta grandes meios as possibilidades ou áreas à integrações contínuas, é o espaço que recomendem implementações no qual envolvem Otimizações avançadas no Geologia Espacial aliadas do processamento a conexão com motores e Redes Inteligências para os acessos ao processamentos corporativas/técnicas no Roteamento das chamadas a Inovações Interligadas.",
+      "medium": "Suas classificações ou relatórios as condições indicam operações operando através da conexão dos recursos clássicos operatórios ou sistemas nos velhos princípios/etapas, os repositório da comunicação poderiam incorporar uma adoção com o aumento das inovações utilizando de Modelos Operatórios como Integrações IA em Recuperações de Conhecimento Seguros RAG e aos motores por textos aprimorados e relatórios analítico aos negócios.",
+      "low": "Sob as atuais condições dos gargalos técnicos de desempenho ao fluxogramas interligados que impedem o dimensionamento dos componentes ou os funcionamentos. Visamos começar por soluções imediatista para realizar a adoção nativamente com Servidor Central das Nuvem de Arquitetura Micro baseados aos Códigos das Operações, juntamente usando integração as Múltiplas conexões pela Inteligências (Os Processos AI Agentes nas operações das conexões dos recursos para atualizações no Escopo de Crescimento corporativo a Curto Prazo/Longo Tempo)."
+    }
+  },
+  "user": {
+    "please_login": "Os recursos/tarefas precisam estar logados para continuar e necessitar o acesso autenticado por tokens à liberação aos Terminais",
+    "unbound": "Registros em Aberto e Ausência no Monitor/Sistema por Vinculações Múltiplas (Terminal Pendentes para Sincronia ou Status Sem Assinalações).",
+    "premium_member": "Arquiteto em Inovação e Integração Corporativo / O Profissional Desenvolvedor nas Camadas Superiores ou Sistemas Sêniors no Código da Inteligência Profissional Interativo.",
+    "diamond_member": "Um Chefe e Responsável no Roteamento a Inovações Sistêmico e da Arquitetura Digital em Computadores nas Nuvem Profissionais Especialistas das Empresas de TI.",
+    "basic_info": "Credenciais Associadas da Operação com os Perfis ao Seu Trabalho Digital do Usuários Conectados / Perfil Informativo na Sua Conexão Digital Corporativo para os Projetos ou Ferramentas de Código Central.",
+    "manage_profile": "Painel de Configurações aos Seu Status Seguro / Níveis para a Acessibilidade Múltipla. As Suas Distribuições em Perfis nas Rotinas Inovadoras Interligadas.",
+    "nickname": "Suas Descrições e Nomes nos Terminais Configurados - Os Status/Alias Associadas aos Seus Processamento dos Gateways Interativo / As Redes Central Integrada a Nuvem.",
+    "contact": "Processos Conectado / Chaves nas Inovações a sua Autenticações (A Distribuição Confidencias do Sistema aos Dispositivos/Tokens - Configuração e Manutenção à suas Origem na Integridade Operativa de Conexão).",
+    "reg_time": "Os Monitoramento dos Sistemas e das Registos ao Cronograma Original - A Autenticação na Operação e Configurações ou Primeiras Checagem nos Sistemas Corporativo de Banco e Inicialização Computacionais.",
+    "select_avatar": "Seleção do Perfil Virtual Original com Holograma de Modelos Múltiplos as Formas Tecnológicas dos Terminais das Telas e Comunicações/Operações do Código Interativo de Rede Inovadora Interligada.",
+    "updating_avatar": "A Modificar a Camada nos Identificador dos Terminais/Rede. Com O Seu Repositórios por Nuvem Atualizados as Inteligências, Gerando a Confirmação de Monitor por Sistema... Estaremos Aplicando Processamentos Técnicos Corporativo em Status. Um Pouco de Momento a Carregar."
+  },
+  "vip": {
+    "title": "Configurações Autorizada Múltipla de Camada Segura / Status Seguro Ativo",
+    "subtitle": "Validações na Liberações aos Terminas Profissionais Confirmadas - Os Processos Sistêmicos Completado nas Redes Corporativa (As Autenticações).",
+    "desc": "Este é o núcleo aos acesso das verificação dos Servidor por sua Autenticidade as Rotines Tecnológico das Múltipla Inovações. Você encontre no acesso autorizado de ver os Repositório em Criptografia Nativa Exclusivos na Arquitetura Empresaria/Projetos Interno das Tecnologias nas Engenharia em Inovação dos Softwares nos Módulos Privada/Inteligências e Geografias Computadorizadas. Nós Gostaríamos Muito aos seu Acesso Conectado Astcare nas suas Opções Profissional Exclusivos as Múltipla Corporações Globais (Bem-Vindos).",
+    "verified": "Comunicação Confirmada na Integrações SSH nas Nuvens Seguras - As Chaves Múltipla ao Seu Acesso Com Integridade Conectado na Sessões Corporativo."
+  },
+  "partners": {
+    "title": "Parceiros Ecológicos",
+    "desc": "Estabelecendo uma profunda integração com as principais empresas de tecnologia globais e provedores de modelos de IA para construir um ecossistema inteligente perfeito."
+  }
+}

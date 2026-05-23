@@ -109,20 +109,20 @@ const ScientificSystem = () => {
     { 
       name: t('scientific.ingredients.0.name'), 
       desc: t('scientific.ingredients.0.desc'), 
-      image: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&q=80&w=1200&fm=webp",
-      icon: <Droplets className="size-6" />
+      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&fm=webp",
+      icon: <Droplets className="size-6 text-brand-primary" />
     },
     { 
       name: t('scientific.ingredients.1.name'), 
       desc: t('scientific.ingredients.1.desc'), 
-      image: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?auto=format&fit=crop&q=80&w=1200&fm=webp", 
-      icon: <Sparkles className="size-6" />
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200&fm=webp", 
+      icon: <Sparkles className="size-6 text-brand-primary" />
     },
     { 
       name: t('scientific.ingredients.2.name'), 
       desc: t('scientific.ingredients.2.desc'), 
-      image: "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&q=80&w=1200&fm=webp", 
-      icon: <Zap className="size-6" />
+      image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=1200&fm=webp", 
+      icon: <Zap className="size-6 text-brand-primary" />
     }
   ];
 
@@ -240,11 +240,11 @@ const ScientificSystem = () => {
               transition={{ duration: 1.5 }}
               className="lg:col-span-12 relative z-0"
             >
-              <div className="aspect-square rounded-[32px] overflow-hidden image-container-modern shadow-2xl">
+              <div className="aspect-square rounded-[32px] overflow-hidden image-container-modern shadow-[0_0_50px_rgba(0,240,255,0.2)]">
                 <img 
-                  src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&q=80&w=2000&fm=webp" 
+                  src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=2000&fm=webp" 
                   alt="Scientific Purity" 
-                  className="w-full h-full object-cover grayscale-[0.5] opacity-60 mix-blend-luminosity"
+                  className="w-full h-full object-cover opacity-80 mix-blend-screen"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                   decoding="async"

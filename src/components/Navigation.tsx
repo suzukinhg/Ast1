@@ -17,11 +17,12 @@ const navItems = [
 ];
 
 const languages = [
-  { code: 'zh-CN', label: '简体中文', flag: '🇨🇳' },
   { code: 'en-US', label: 'English', flag: '🇺🇸' },
+  { code: 'zh-CN', label: '简体中文', flag: '🇨🇳' },
   { code: 'ja-JP', label: '日本語', flag: '🇯🇵' },
   { code: 'fr-FR', label: 'Français', flag: '🇫🇷' },
   { code: 'ko-KR', label: '한국어', flag: '🇰🇷' },
+  { code: 'pt-BR', label: 'Português', flag: '🇧🇷' },
 ];
 
 export default function Navigation({ activeTab, setActiveTab, openAuth }: NavigationProps) {

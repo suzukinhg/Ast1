@@ -27,9 +27,9 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
         className="absolute inset-0 z-0 gpu-accelerated overflow-hidden pointer-events-none will-change-transform"
       >
         <img 
-          src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=2000&fm=webp" 
+          src="https://images.unsplash.com/photo-1451187580459-434902bd0c0e?auto=format&fit=crop&q=80&w=2000&fm=webp" 
           alt={t('hero.bg_alt')}
-          className="w-full h-full object-cover opacity-30 brightness-75 contrast-[1.2] grayscale-[0.3] select-none scale-105"
+          className="w-full h-full object-cover opacity-60 mix-blend-screen scale-105"
           referrerPolicy="no-referrer"
           fetchPriority="high"
           decoding="async"
@@ -43,7 +43,7 @@ export default function Hero({ onExplore, onProductsClick }: HeroProps) {
       
       <motion.div 
         style={{ y: useTransform(scrollYProgress, [0, 1], ["0%", "-40%"]) }}
-        className="absolute top-1/4 -right-40 w-[600px] h-[600px] bg-brand-primary/5 rounded-full blur-[180px] pointer-events-none" 
+        className="absolute top-1/4 -right-40 w-[600px] h-[600px] bg-brand-primary/10 rounded-full blur-[120px] pointer-events-none animate-[glow-pulse_8s_ease-in-out_infinite]" 
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">

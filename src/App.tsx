@@ -18,6 +18,7 @@ const ScientificSystem = lazy(() => import('./components/ScientificSystem'));
 const UserProfile = lazy(() => import('./components/user/UserProfile'));
 const VipZone = lazy(() => import('./components/VipZone'));
 const OfflineQRGenerator = lazy(() => import('./components/OfflineQRGenerator'));
+const Partners = lazy(() => import('./components/Partners'));
 
 const LoadingFallback = () => (
   <div className="flex items-center justify-center min-h-[200px]">
@@ -312,6 +313,13 @@ export default function App() {
               </div>
             </section>
 
+            {/* Partners Section */}
+            <section className="bg-transparent content-visibility-auto">
+              <Suspense fallback={<LoadingFallback />}>
+                <Partners />
+              </Suspense>
+            </section>
+
             <section className="px-4 sm:px-6 lg:px-8 py-12 bg-transparent relative overflow-hidden flex items-center content-visibility-auto">
                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
                   <motion.div 
@@ -323,8 +331,8 @@ export default function App() {
                   >
                     <div className="aspect-[16/10] overflow-hidden rounded-[24px] shadow-2xl">
                       <ParallaxImage 
-                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=1200&fm=webp" 
-                        alt="Scientific Wellness"
+                        src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=1200&fm=webp" 
+                        alt="Core Architecture"
                       />
                     </div>
                     <motion.div 

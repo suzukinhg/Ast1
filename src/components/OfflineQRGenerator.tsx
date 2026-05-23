@@ -28,7 +28,7 @@ export default function OfflineQRGenerator({ onBack }: OfflineQRGeneratorProps) 
       }
       const pngFile = canvas.toDataURL("image/png");
       const downloadLink = document.createElement("a");
-      downloadLink.download = "Astcare_VIP_QRCode.png";
+      downloadLink.download = "Astcare_Terminal_Auth.png";
       downloadLink.href = pngFile;
       downloadLink.click();
     };
