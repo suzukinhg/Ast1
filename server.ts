@@ -27,6 +27,41 @@ async function startServer() {
   app.get("/health", healthHandler);
   app.get("/api/health", healthHandler);
 
+  // GEO Score check endpoint
+  app.post("/api/geoScore", (req: express.Request, res: express.Response) => {
+    try {
+      const { content } = req.body;
+      if (!content || typeof content !== "string" || content.trim() === "") {
+        return res.status(400).json({ code: 400, msg: "关键词内容不能为空", data: null });
+      }
+
+      // 关键词简单校验逻辑 (简单模拟)
+      if (content.length < 2) {
+         return res.status(400).json({ code: 400, msg: "关键词过短，请重新输入", data: null });
+      }
+
+      // Simulate API latency
+      setTimeout(() => {
+        // Generate mock scores between 0 and 100
+        const generateScore = () => Math.floor(Math.random() * 60) + 40; // 40-100 range for realism
+
+        res.json({
+          code: 200,
+          msg: "success",
+          data: {
+            aiVisible: generateScore(),
+            authority: generateScore(),
+            credibility: generateScore(),
+            brandWeight: generateScore(),
+            infoComplete: generateScore()
+          }
+        });
+      }, 1000);
+    } catch (error) {
+      res.status(500).json({ code: 500, msg: "Server Error", data: null });
+    }
+  });
+
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({

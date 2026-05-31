@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 
 interface NavigationProps {
-  activeTab: 'public' | 'qa' | 'scientific' | 'user';
-  setActiveTab: (tab: 'public' | 'qa' | 'scientific' | 'user') => void;
+  activeTab: 'public' | 'qa' | 'scientific' | 'user' | 'vip' | 'qr';
+  setActiveTab: (tab: 'public' | 'qa' | 'scientific' | 'user' | 'vip' | 'qr') => void;
   openAuth: () => void;
 }
 

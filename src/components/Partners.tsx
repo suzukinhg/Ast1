@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
-import { Sparkles, BrainCircuit, MessageSquare, Cloud, Cpu, Server, Box, X, TrendingUp, Zap } from 'lucide-react';
+import { Sparkles, BrainCircuit, MessageSquare, Cloud, Cpu, Server, Box, X, TrendingUp, Zap, Bot, Lightbulb, Orbit, MessageCircle, Moon } from 'lucide-react';
 import { ResponsiveContainer, AreaChart, Area, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
 const partnersData = [
@@ -16,6 +16,26 @@ const partnersData = [
   { name: 'Claude', sub: 'Anthropic Core', icon: MessageSquare, color: 'bg-gradient-to-br from-amber-500/5 to-orange-500/5 text-amber-500 border-amber-500/20 hover:border-amber-500/40 hover:bg-amber-50/50 shadow-sm hover:shadow-xl hover:shadow-amber-500/20',
     desc: 'Connecting with Anthropic Claude provides our systems with industry-leading context window reasoning and nuanced enterprise communication.',
     charts: [ { name: 'Q1', baseline: 40, synergy: 80 }, { name: 'Q2', baseline: 50, synergy: 90 }, { name: 'Q3', baseline: 55, synergy: 105 }, { name: 'Q4', baseline: 60, synergy: 115 } ]
+  },
+  { name: '豆包', sub: 'Doubao AI', icon: Bot, color: 'bg-gradient-to-br from-indigo-500/5 to-blue-500/5 text-indigo-500 border-indigo-500/20 hover:border-indigo-500/40 hover:bg-indigo-50/50 shadow-sm hover:shadow-xl hover:shadow-indigo-500/20',
+    desc: 'Doubao\'s powerful foundational models provide exceptional conversational assistance, enabling our ecosystem to streamline interactions and improve user engagement.',
+    charts: [ { name: 'Q1', baseline: 40, synergy: 85 }, { name: 'Q2', baseline: 55, synergy: 100 }, { name: 'Q3', baseline: 65, synergy: 120 }, { name: 'Q4', baseline: 70, synergy: 140 } ]
+  },
+  { name: '通义千问', sub: 'Qwen AI', icon: Lightbulb, color: 'bg-gradient-to-br from-purple-500/5 to-fuchsia-500/5 text-purple-500 border-purple-500/20 hover:border-purple-500/40 hover:bg-purple-50/50 shadow-sm hover:shadow-xl hover:shadow-purple-500/20',
+    desc: 'Qwen models from Alibaba Cloud bring expansive knowledge and robust reasoning capabilities, forming a strong backbone for our intelligent processing nodes.',
+    charts: [ { name: 'Q1', baseline: 35, synergy: 90 }, { name: 'Q2', baseline: 50, synergy: 105 }, { name: 'Q3', baseline: 60, synergy: 115 }, { name: 'Q4', baseline: 75, synergy: 135 } ]
+  },
+  { name: '腾讯元宝', sub: 'Yuanbao', icon: Orbit, color: 'bg-gradient-to-br from-blue-500/5 to-sky-500/5 text-blue-500 border-blue-500/20 hover:border-blue-500/40 hover:bg-blue-50/50 shadow-sm hover:shadow-xl hover:shadow-blue-500/20',
+    desc: 'Tencent Yuanbao leverages a vast repository of data and superior natural language understanding, delivering tailored insights perfectly aligned with enterprise needs.',
+    charts: [ { name: 'Q1', baseline: 45, synergy: 88 }, { name: 'Q2', baseline: 60, synergy: 110 }, { name: 'Q3', baseline: 70, synergy: 130 }, { name: 'Q4', baseline: 80, synergy: 150 } ]
+  },
+  { name: '文心一言', sub: 'ERNIE Bot', icon: MessageCircle, color: 'bg-gradient-to-br from-cyan-500/5 to-teal-500/5 text-cyan-500 border-cyan-500/20 hover:border-cyan-500/40 hover:bg-cyan-50/50 shadow-sm hover:shadow-xl hover:shadow-cyan-500/20',
+    desc: 'ERNIE Bot enhances our knowledge graphs with deep semantic understanding, optimizing information retrieval and providing precise, context-aware responses.',
+    charts: [ { name: 'Q1', baseline: 30, synergy: 95 }, { name: 'Q2', baseline: 45, synergy: 105 }, { name: 'Q3', baseline: 55, synergy: 125 }, { name: 'Q4', baseline: 70, synergy: 145 } ]
+  },
+  { name: 'Kimi', sub: 'Moonshot AI', icon: Moon, color: 'bg-gradient-to-br from-slate-500/5 to-gray-500/5 text-slate-500 border-slate-500/20 hover:border-slate-500/40 hover:bg-slate-50/50 shadow-sm hover:shadow-xl hover:shadow-slate-500/20',
+    desc: 'Kimi\'s long-context processing capabilities allow our platforms to digest massive datasets instantly, enabling zero-loss reasoning across extensive documentation.',
+    charts: [ { name: 'Q1', baseline: 50, synergy: 100 }, { name: 'Q2', baseline: 65, synergy: 120 }, { name: 'Q3', baseline: 80, synergy: 140 }, { name: 'Q4', baseline: 90, synergy: 160 } ]
   },
   { name: '阿里云', sub: 'Cloud Infra', icon: Cloud, color: 'bg-gradient-to-br from-sky-500/5 to-blue-500/5 text-sky-500 border-sky-500/20 hover:border-sky-500/40 hover:bg-sky-50/50 shadow-sm hover:shadow-xl hover:shadow-sky-500/20',
     desc: 'Alibaba Cloud infrastructure delivers ultra-low latency enterprise deployments, optimizing local container cold-starts and bandwidth.',
@@ -98,8 +118,6 @@ export default function Partners() {
               // Make layout slightly staggered for "错落有致" (scattered/staggered alignment)
               className={`flex flex-col items-center justify-center p-6 sm:p-8 rounded-[24px] lg:rounded-[32px] border backdrop-blur-md transition-colors duration-500 cursor-pointer relative overflow-hidden group ${partner.color} ${
                 idx % 2 === 1 ? 'md:mt-12' : 'md:mb-12'
-              } ${
-                idx === 3 || idx === 6 ? 'col-span-2 md:col-span-1 md:row-span-2' : ''
               }`}
               style={{ minHeight: '160px' }}
             >
